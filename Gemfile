@@ -43,9 +43,9 @@ gem 'bootstrap', '~> 4.1', '>= 4.1.1'
 # the maclover/trix gem does not work with rails 5.2
 gem 'trix', git: 'https://github.com/DRBragg/trix'
 # Use ActiveStorage variant
-gem 'mini_magick', '~> 4.8'
-gem 'aws-sdk-s3', '~> 1.13', require: false
-gem 'image_processing', '~> 1.2'
+# gem 'mini_magick', '~> 4.8'
+# gem 'aws-sdk-s3', '~> 1.13', require: false
+# gem 'image_processing', '~> 1.2'
 gem 'sendgrid', '~> 1.2', '>= 1.2.4'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
