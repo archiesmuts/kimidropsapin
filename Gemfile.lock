@@ -208,7 +208,6 @@ GEM
     rack (2.0.5)
     rack-test (1.0.0)
       rack (>= 1.0, < 3)
-    rack-timeout (0.5.1)
     rails (5.2.0)
       actioncable (= 5.2.0)
       actionmailer (= 5.2.0)
@@ -326,7 +325,6 @@ DEPENDENCIES
   mini_magick (~> 4.8)
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
-  rack-timeout
   rails (~> 5.2.0)
   rails_layout
   recaptcha
