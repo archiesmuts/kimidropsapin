@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Kimi's blog" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Kimisblog" %>">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+    <title>Kimisblog</title>
     <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title><%= content_for?(:title) ? yield(:title) : "kimisblog" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "kimisblog" %>">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <header>
+    <header class="masthead">
       <%= render 'layouts/navigation' %>
     </header>
-    <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
-    </main>
+    <div class="container-fluid">
+      <main role="main">
+        <%= yield %>
+      </main>
+    </div>
+    <footer class="container py-5">
+      <%= render "layouts/footer" %>
+    </footer>
   </body>
 </html>
