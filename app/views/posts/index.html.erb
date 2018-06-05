@@ -1,16 +1,26 @@
+<div class="jumbotron mt-2">
+  <div class="row">
+    <div class="col-lg-10 offset-lg-1">
+
+      <h1>Posts</h1>
+      <%= link_to 'New Post', new_post_path, class: "btn btn-lg btn-primary" %>
+
+    </div>
+  </div>
+</div>
+
 <div class="row">
   <div class="col-xl-10 offset-xl-1">
-    <h1>Posts</h1>
-
-    <%= link_to 'New Post', new_post_path, class: "btn btn-lg btn-primary" %>
-
     <table class="table mt-3">
       <tbody>
         <% @posts.each do |post| %>
           <tr>
             <td>
               <h1><%= post.title %></h1>
-              <p class="lead"><%= post.body %></p>
+              <p class="lead">
+                <%= post.body.truncate(500) %>
+                <%= link_to 'Read more', post, class: "btn btn-link" %>
+              </p>
               <p><em>Posted&nbsp;<%= time_ago_in_words(post.created_at) %>&nbsp;ago.</em></p>
               <p>
                 <%= link_to 'Show', post, class: "btn btn-link" %>
