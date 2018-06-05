@@ -64,11 +64,13 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "kimisblog_#{Rails.env}"
   #Setup the mailer config
   config.action_mailer.delivery_method = :smtp
+
   config.action_mailer.perform_deliveries = true
+
   config.action_mailer.smtp_settings = {
    :user_name => ENV['SENDGRID_USERNAME'],
    :password => ENV['SENDGRID_PASSWORD'],
-   :domain => 'kimisblog.herokuapp.com',
+   :domain => 'mysterious-taiga-57851.herokuapp.com',
    :address => 'smtp.sendgrid.net',
    :port => 587,
    :authentication => :plain,
