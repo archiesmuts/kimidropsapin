@@ -21,7 +21,12 @@
                 <%= post.body.truncate(500) %>
                 <%= link_to 'Read more', post, class: "btn btn-link" %>
               </p>
-              <p><em>Posted&nbsp;<%= time_ago_in_words(post.created_at) %>&nbsp;ago.</em></p>
+              <p>
+                <em>
+                  <%= fa_icon("calendar-alt") %>&nbsp;Posted&nbsp;<%= time_ago_in_words(post.created_at) %>&nbsp;ago&nbsp;
+                  <%= fa_icon("comments") %>&nbsp;<%= pluralize(post.comments.size, 'comment') %>
+                </em>
+              </p>
               <p>
                 <%= link_to 'Show', post, class: "btn btn-link" %>
                 <%= link_to 'Edit', edit_post_path(post), class: "btn btn-link" %>

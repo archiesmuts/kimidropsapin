@@ -8,3 +8,32 @@
     </div>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-md-7 offset-lg-1">
+    <h3>
+      <%= fa_icon("comments", text: "Comments") %>
+      <small><span class="badge badge-info" id="sizeComments1"></span></small>&nbsp;
+      <%= link_to "View comments", "#", class: "btn btn-link", id: "comments_link" %>
+    </h3>
+    <section id="comments-section">
+      <ul id="list-comments" class="list-group">
+        <% if @post.comments.any? %>
+          <%= render @post.comments %>
+        <% else %>
+        <li class="list-group-item list-group-item-info" id="comment_placeholder">
+          <h4>Nobody has commented yet.</h4>
+        </li>
+        <% end %>
+      </ul>
+      <div class="my-2">
+        <div class="card border-primary">
+          <div class="card-body">
+            <%= render "comments/form" %>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </div>
+</div>

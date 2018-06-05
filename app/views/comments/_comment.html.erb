@@ -1,0 +1,11 @@
+<li id="<%= dom_id(comment) %>" class="list-group-item comment mb-1">
+  <span><%= sanitize(comment.body) %></span><br>
+  <small>
+    <span class="text-info">
+    <%= fa_icon "comment" %>&nbsp;
+    <em><%= comment.name.titleize %>
+      commented&nbsp;<%= time_ago_in_words(comment.created_at) %>&nbsp;ago.
+    </em>
+    </span>
+  </small>
+</li>
