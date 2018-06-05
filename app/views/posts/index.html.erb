@@ -18,7 +18,7 @@
             <td>
               <h1><%= post.title %></h1>
               <p class="lead">
-                <%= post.body.truncate(500) %>
+                <%= sanitize(post.body.truncate(500)) %>
                 <%= link_to 'Read more', post, class: "btn btn-link" %>
               </p>
               <p>
