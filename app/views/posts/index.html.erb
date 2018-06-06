@@ -10,8 +10,9 @@
         email and password.
       </p>
       <p class="lead">No sign-in is required for viewing posts and leaving comments.</p>
-
-      <%= link_to 'Create a New Post', new_post_path, class: "btn btn-lg btn-primary" %>
+      <% if user_signed_in? %>
+        <%= link_to 'Create a New Post', new_post_path, class: "btn btn-lg btn-primary" %>
+      <% end %>
 
     </div>
   </div>
@@ -35,11 +36,13 @@
                   <%= fa_icon("comments") %>&nbsp;<%= pluralize(post.comments.size, 'comment') %>
                 </em>
               </p>
-              <p>
-                <%= link_to 'Show', post, class: "btn btn-link" %>
-                <%= link_to 'Edit', edit_post_path(post), class: "btn btn-link" %>
-                <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
-              </p>
+              <% if user_signed_in? %>
+                <p>
+                  <%= link_to 'Show', post, class: "btn btn-link" %>
+                  <%= link_to 'Edit', edit_post_path(post), class: "btn btn-link" %>
+                  <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
+                </p>
+              <% end %>
             </td>
           </tr>
         <% end %>

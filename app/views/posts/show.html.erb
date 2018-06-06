@@ -4,7 +4,9 @@
       <h1 class="display-4"><%= @post.title %></h1>
       <p><%= sanitize(@post.body) %></p>
       <%= link_to 'Back to posts', posts_path, class: "btn btn-lg btn-outline-primary" %>
-      <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-lg btn-primary" %>
+      <% if user_signed_in? %>
+        <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-lg btn-primary" %>
+      <% end %>
     </div>
   </div>
 </div>

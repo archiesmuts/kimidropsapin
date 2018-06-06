@@ -7,12 +7,14 @@
       commented&nbsp;<%= time_ago_in_words(comment.created_at) %>&nbsp;ago.
     </em>
     </span>
-    <br>
-  <%= link_to [@post, comment], class: "delete-comment",
-    method: :delete, remote: true,
-    data: { confirm: 'Are you sure you wan to delete this comment?' } do %>
-    <%= fa_icon("trash-alt", text: "Destroy", type: "regular") %>
-  <% end %>
+    <% if user_signed_in? %>
+      <br>
+      <%= link_to [@post, comment], class: "delete-comment",
+        method: :delete, remote: true,
+        data: { confirm: 'Are you sure you wan to delete this comment?' } do %>
+        <%= fa_icon("trash-alt", text: "Destroy", type: "regular") %>
+      <% end %>
+    <% end %>
   </small>
 
 </li>
