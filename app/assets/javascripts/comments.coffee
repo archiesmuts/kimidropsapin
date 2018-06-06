@@ -14,4 +14,4 @@ jQuery(document).on "turbolinks:load", ->
     $("#comment_name").focus()
     $("#comment_name").val("")
     $("#comment_email").val("")
-    $("#comment_body").val("")
+    $(".trix-content").val("")

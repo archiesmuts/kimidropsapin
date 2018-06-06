@@ -21,7 +21,7 @@ $("#<%= dom_id(@comment) %>").hide().fadeIn(1000);
 $("#comment_name").focus();
 $("#comment_name").val("");
 $("#comment_email").val("");
-$("#comment_body").val("");
+$(".trix-content").val("");
 $("#list-comments").sizeComments();
 
 // Clear form
