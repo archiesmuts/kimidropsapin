@@ -19,10 +19,10 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
   # config.mailer_sender = 'kimberley.smuts@gmail.com'
-  # Rails.application.secrets.domain_name
-  #   domain = Rails.application.secrets.domain_name
-  #   domain ||= 'kimisblog.herokuapp.com'
-  #   config.mailer_sender = 'no-reply@' + domain
+  # Rails.application.credentials.domain_name
+    domain = Rails.application.credentials.domain_name
+    domain ||= 'kimisblog.herokuapp.com'
+    config.mailer_sender = 'no-reply@' + domain
   # Configure the class responsible to send e-mails.
   config.mailer = 'Devise::Mailer'
 
