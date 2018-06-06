@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  # before_action :authenticate_user!, only: :destroy
+  before_action :authenticate_user!, only: :destroy
   before_action :set_post, only: [:index, :create, :destroy]
   before_action :set_comment, only: [:destroy]
 
@@ -62,7 +62,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to @post, notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }
-      formt.js
+      format.js
     end
   end
 

@@ -1,23 +1,26 @@
-<h2>Resend confirmation instructions</h2>
-<div class="row">
-  <div class="col-md-6">
+<div class="d-flex justify-content-center mt-2">
+  <h1 class="h4 text-center">Resend confirmation instructions</h1>
+</div>
+<div class="d-flex flex-wrap justify-content-center align-items-md-stretch">
+  <div class="card m-1" style="width: 21rem;" >
+    <div class="card-body">
+      <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+        <%= devise_error_messages! %>
 
-    <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-      <%= devise_error_messages! %>
+        <div class="form-group">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: "form-control" %>
+        </div>
 
-      <div class="form-group">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: "form-control" %>
+        <div class="actions">
+          <%= f.submit "Resend confirmation email", class: "btn btn-lg btn-primary" %>
+        </div>
+      <% end %>
       </div>
-
-      <div class="actions">
-        <%= f.submit "Resend confirmation instructions", class: "btn btn-lg btn-primary" %>
-      </div>
-    <% end %>
     </div>
-  <div class="col-md-6">
-    <p>
+  <div class="card m-1">
+    <div class="card-body" style="width: 21rem;">
       <%= render "devise/shared/links" %>
-    </p>
+    </div>
   </div>
 </div>

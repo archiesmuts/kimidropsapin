@@ -1,0 +1,7 @@
+$(".delete-comment").bind('ajax:success', function() {
+  $(this).closest('li').fadeOut(500, function(){
+  	$(this).remove();
+    $("#comment_name").focus();
+    $("#list-comments").sizeComments();
+  });
+});
