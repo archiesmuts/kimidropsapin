@@ -11,14 +11,25 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <header class="masthead">
-      <%= render 'layouts/navigation' %>
+    <!-- Header -->
+    <header id="js-header" class="u-header u-header--static">
+      <%= render "navigation_links" %>
     </header>
-      <main role="main">
-        <%= yield %>
-      </main>
+    <!-- End Header -->
+    <main role="main">
+      <%= yield %>
+    </main>
     <footer class="container py-5">
       <%= render "layouts/footer" %>
     </footer>
+    <!-- unify back to top button -->
+    <!-- <a class="js-go-to u-go-to-v1" href="#!"
+      data-type="fixed"
+      data-position='{ "bottom": 15, "right": 15 }'
+      data-offset-top="400"
+      data-compensation="#js-header"
+      data-show-effect="zoomIn">
+      <i class="hs-icon hs-icon-arrow-top"></i>
+    </a> -->
   </body>
 </html>
