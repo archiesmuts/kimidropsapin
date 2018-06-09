@@ -5,8 +5,18 @@
 // #stickyblock-image {
 //     background: image-url("img-900-900.jpg");
 // }
-div#sticky-block {
+.sticky-block {
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
+}
+.firstcharacter {
+  color: purple;
+  float: left;
+  font-family: Georgia;
+  font-size: 75px;
+  line-height: 60px;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-left: 3px;
 }

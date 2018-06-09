@@ -1,29 +1,25 @@
 <!-- Blog Single Item Blocks -->
 <div class="container-fluid px-0">
-  <div class="row no-gutters">
-    <div id="stickyblock-start" class="col-md-5">
-      <div id="sticky-block" class="js-sticky-block g-sticky-block--md g-bg-img-hero g-min-height-100vh" data-type="responsive" data-bg-img-src="https://s3.eu-central-1.amazonaws.com/kimis-blog-production/orange+squash-soup-cayla1.jpg"  data-start-point="#stickyblock-start" data-end-point="#stickyblock-end">
-        <!-- Photo by Piotr Miazga on Unsplash Ladle full of vegetable soup with carrots, peas, and ramen noodles -->
-        <!-- https://s3.eu-central-1.amazonaws.com/kimis-blog-production/ladle-full-of-veg-soup-piotr-miazga.png -->
-        <!-- Photo by Cayla1 on Unsplash - Bowls of orange squash soup topped with feta cheese and herbs -->
-        <!-- https://s3.eu-central-1.amazonaws.com/kimis-blog-production/orange+squash-soup-cayla1.jpg -->
-        <!-- Photo by Vitchakorn Koonyosying on Unsplash  - rice asian chopsticks-->
-      </div>
+  <div class="row">
+    <div class="col-md-5 sticky-block bg-info" src="https://s3.eu-central-1.amazonaws.com/kimis-blog-production/orange-squash-soup-cayla1.jpg" alt="Orange squash soup" ></div>
 
-    </div>
 
-    <div class="col-md-7">
-      <div class="g-pa-50 g-pt-0 g-px-100--lg g-pb-100--lg">
-        <div class="g-max-width-500--md g-pos-rel g-z-index-1 g-pt-100 g-pl-50 g-pl-0--md g-ml-minus-50--lg mb-4">
-          <h1 class="h2 g-color-black g-font-weight-600"><%= @post.title %></h1>
-        </div>
+      <!-- Photo by Piotr Miazga on Unsplash Ladle full of vegetable soup with carrots, peas, and ramen noodles -->
+      <!-- https://s3.eu-central-1.amazonaws.com/kimis-blog-production/ladle-full-of-veg-soup-piotr-miazga.png -->
+      <!-- Photo by Cayla1 on Unsplash - Bowls of orange squash soup topped with feta cheese and herbs -->
+      <!-- https://s3.eu-central-1.amazonaws.com/kimis-blog-production/orange-squash-soup-cayla1.jpg -->
+      <!-- Photo by Vitchakorn Koonyosying on Unsplash  - rice asian chopsticks-->
+
+
+    <div class="col-md-6">
+      <h1 class="h1 text-info"><%= @post.title %></h1>
 
         <!-- Author -->
-        <div class="media align-items-center g-brd-bottom g-brd-gray-light-v4 pb-5 mb-5">
-          <img class="d-flex img-fluid g-width-40 g-height-40 rounded-circle mr-3" data-src="holder.js/40x40?theme=lava" alt="Image">
+        <div class="media align-items-center pb-5 mb-5">
+          <img class="d-flex img-fluid rounded-circle mr-3" data-src="holder.js/40x40?theme=lava" alt="Image">
           <div class="media-body">
-            <h4 class="h6 g-color-black g-font-weight-600 mb-0">By Kimberley Smuts</h4>
-            <span class="d-block g-color-gray-dark-v5 g-font-size-12">May 31, 2017</span>
+            <h4 class="h6">By Kimberley Smuts</h4>
+            <span class="d-block">May 31, 2017</span>
             <%= link_to 'Back to posts', posts_path, class: "btn btn-link" %>
             <% if user_signed_in? %>
               <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-link" %>
@@ -33,17 +29,17 @@
           <!-- Figure Social Icons -->
           <ul class="list-inline mb-0">
             <li class="list-inline-item g-mx-2">
-              <a class="u-icon-v2 u-icon-size--xs g-brd-gray-light-v4 g-brd-primary--hover g-color-gray-dark-v3 g-color-white--hover g-bg-primary--hover rounded-circle g-text-underline--none--hover" href="#!">
+              <a class="rounded-circle" href="#!">
                 <i class="fab fa-facebook"></i>
               </a>
             </li>
-            <li class="list-inline-item g-mx-2">
-              <a class="u-icon-v2 u-icon-size--xs g-brd-gray-light-v4 g-brd-primary--hover g-color-gray-dark-v3 g-color-white--hover g-bg-primary--hover rounded-circle g-text-underline--none--hover" href="#!">
+            <li class="list-inline-item mx-2">
+              <a class="rounded-circle" href="#!">
                 <i class="fab fa-twitter"></i>
               </a>
             </li>
-            <li class="list-inline-item g-mx-2">
-              <a class="u-icon-v2 u-icon-size--xs g-brd-gray-light-v4 g-brd-primary--hover g-color-gray-dark-v3 g-color-white--hover g-bg-primary--hover rounded-circle g-text-underline--none--hover" href="#!">
+            <li class="list-inline-item mx-2">
+              <a class="rounded-circle" href="#!">
                 <i class="fab fa-instagram"></i>
               </a>
             </li>
@@ -52,15 +48,16 @@
         </div>
         <!-- End Author -->
 
-        <div class="g-mb-40">
-          <span class="d-inline-block float-left g-width-70 g-color-black g-font-weight-600 g-font-size-50 text-center mr-2">
+        <div class="mb-40">
+          <span class="firstcharacter">
             <%= (strip_tags @post.body).chr %>
             <!-- retutns the first character after stripping all the tags -->
           </span>
+        </span>
           <p><%= sanitize @post.body[6..-1], attributes: %w(href) %></p>
           <!--Will return the array from 6 to the last character. -->
         </div>
-        <div class="g-mb-60">
+        <div class="mb-60">
           <h3>
             <%= fa_icon("comments", text: "Comments") %>
             <small><span class="badge badge-info" id="sizeComments1"></span></small>&nbsp;
@@ -94,26 +91,26 @@
         </div>
 
         <!-- Social Icons -->
-        <div class="g-brd-top g-brd-gray-light-v4 text-center g-pt-50">
-          <h3 class="h6 g-color-black g-font-weight-600 text-uppercase mb-3">Share:</h3>
+        <div class="text-center pt-50">
+          <h3 class="h6 text-uppercase mb-3">Share:</h3>
           <ul class="list-inline mb-0">
             <li class="list-inline-item g-mx-2">
-              <a class="u-icon-v1 u-icon-slide-up--hover g-color-gray-dark-v4 g-color-facebook--hover" href="#!">
-                <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fab fa-facebook"></i>
-                <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fab fa-facebook"></i>
+              <a class="" href="#!">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-facebook"></i>
               </a>
             </li>
-            <li class="list-inline-item g-mx-2">
-              <a class="u-icon-v1 u-icon-slide-up--hover g-color-gray-dark-v4 g-color-twitter--hover" href="#!">
-                <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fab fa-twitter"></i>
-                <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fab fa-twitter"></i>
+            <li class="list-inline-item mx-2">
+              <a class="" href="#!">
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-twitter"></i>
               </a>
             </li>
 
-            <li class="list-inline-item g-mx-2">
-              <a class="u-icon-v1 u-icon-slide-up--hover g-color-gray-dark-v4 g-color-linkedin--hover" href="#!">
-                <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fab fa-instagram"></i>
-                <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fab fa-instagram"></i>
+            <li class="list-inline-item mx-2">
+              <a class="" href="#!">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-instagram"></i>
               </a>
             </li>
           </ul>
@@ -124,5 +121,3 @@
   </div>
 </div>
 <!-- End Blog Single Item Blocks -->
-
-<div id="stickyblock-end"></div>

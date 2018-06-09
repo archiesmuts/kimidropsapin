@@ -40,6 +40,8 @@ gem 'friendly_id', '~> 5.2', '>= 5.2.4'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 gem 'bootstrap', '~> 4.1', '>= 4.1.1'
+gem 'bootswatch', '~> 4.1', '>= 4.1.1'
+
 # the maclover/trix gem does not work with rails 5.2
 gem 'trix', git: 'https://github.com/DRBragg/trix'
 # Use ActiveStorage variant

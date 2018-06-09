@@ -1,0 +1,73 @@
+<!-- Blog Single Item Banner -->
+<%= render "unify_carousel" %>
+
+    <!-- End Blog Single Item Banner -->
+    <!-- Photo by Brooke Lark on Unsplash -->
+
+<!-- Blog Grid Overlap Blocks -->
+<div class="container-fluid g-px-30 g-pt-100">
+  <div class="masonry-grid row g-mb-70">
+    <!-- <div class="masonry-grid-sizer col-sm-1"></div> -->
+    <% @posts.each do |post| %>
+    <div class="masonry-grid-item col-sm-6 col-lg-4 g-mb-30">
+      <!-- Blog Grid Overlap Blocks -->
+      <article>
+        <img class="img-fluid w-100" src="https://s3.eu-central-1.amazonaws.com/kimis-blog-production/cool-background-tropical-salad-sm.jpg" alt="Image Description">
+        <div class="g-width-80x g-bg-white g-pos-rel g-z-index-1 g-pa-25 g-mt-minus-50 mx-auto">
+          <span class="d-block g-color-gray-dark-v4 g-font-weight-600 g-font-size-12 text-uppercase mb-2"><%= post.created_at.strftime("%d %b %Y") %></span>
+          <h2 class="h5 g-color-black g-font-weight-600 mb-3">
+              <a class="u-link-v5 g-color-black g-color-primary--hover g-cursor-pointer" href="#!"><%= post.title %></a>
+            </h2>
+          <p class="g-color-gray-dark-v4 g-line-height-1_8"><%= sanitize(post.body.truncate(300)) %></p>
+          <p class="g-color-gray-dark-v4 g-line-height-1_8"><%= fa_icon("comments") %>&nbsp;<%= pluralize(post.comments.size, 'comment') %></p>
+          <%= link_to 'Read more...', post, class: "g-font-size-13" %>
+          <% if user_signed_in? %>
+          <p>
+
+            <%= link_to 'Show', post, class: "g-font-size-13" %>&nbsp;
+            <%= link_to 'Edit', edit_post_path(post), class: "g-font-size-13" %>&nbsp;
+            <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "g-font-size-13" %>
+          </p>
+          <% end %>
+        </div>
+      </article>
+      <!-- End Blog Grid Overlap Blocks -->
+    </div>
+    <% end %>
+
+  </div>
+</div>
+<!-- End Blog Grid Overlap Blocks -->
+
+<!-- Pagination -->
+<div class="container g-pb-100">
+  <nav class="text-center" aria-label="Page Navigation">
+    <ul class="list-inline">
+      <li class="list-inline-item float-left g-hidden-xs-down">
+        <a class="u-pagination-v1__item u-pagination-v1-4 g-brd-gray-light-v3 g-brd-primary--hover g-rounded-50 g-pa-7-16" href="#!" aria-label="Previous">
+          <span aria-hidden="true">
+            <i class="fa fa-angle-left g-mr-5"></i> Previous
+          </span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="u-pagination-v1__item u-pagination-v1-4 u-pagination-v1-4--active g-rounded-50 g-pa-7-14" href="#!">1</a>
+      </li>
+      <li class="list-inline-item">
+        <a class="u-pagination-v1__item u-pagination-v1-4 g-rounded-50 g-pa-7-14" href="#!">2</a>
+      </li>
+      <li class="list-inline-item float-right g-hidden-xs-down">
+        <a class="u-pagination-v1__item u-pagination-v1-4 g-brd-gray-light-v3 g-brd-primary--hover g-rounded-50 g-pa-7-16" href="#!" aria-label="Next">
+          <span aria-hidden="true">
+            Next <i class="fa fa-angle-right g-ml-5"></i>
+          </span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<!-- End Pagination -->
+
+<div class="u-outer-spaces-helper"></div>
