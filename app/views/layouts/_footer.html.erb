@@ -1,11 +1,11 @@
 <!-- Footer -->
-<div id="contacts-section" class="g-bg-black-opacity-0_9 g-color-white-opacity-0_8 g-py-60">
+<div id="contacts-section" class="">
   <div class="container">
     <div class="row">
       <!-- Footer Content -->
-      <div class="col-lg-4 col-md-6 g-mb-40 g-mb-0--lg">
-        <div class="u-heading-v2-3--bottom g-brd-white-opacity-0_8 g-mb-20">
-          <h2 class="u-heading-v2__title h6 text-uppercase mb-0">About Me</h2>
+      <div class="col-lg-4 col-md-6 ">
+        <div class="">
+          <h2 class="mb-0">About Me</h2>
         </div>
 
         <p>About me dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero tincidunt sodales.</p>
@@ -13,21 +13,19 @@
       <!-- End Footer Content -->
 
       <!-- Footer Content -->
-      <div class="col-lg-4 col-md-6 g-mb-40 g-mb-0--lg">
-        <div class="u-heading-v2-3--bottom g-brd-white-opacity-0_8 g-mb-20">
-          <h2 class="u-heading-v2__title h6 text-uppercase mb-0">Latest Posts</h2>
+      <div class="col-lg-4 col-md-6 ">
+        <div class="">
+          <h2 class="mb-0">Latest Posts</h2>
         </div>
         <% unless params[:action] == "new" || params[:action] == "edit"%>
           <% @posts.limit(3).each do |post| %>
             <article>
               <h3 class="h6 g-mb-2">
-                <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">
-                  <%= post.title.truncate(70) %>
-                </a>
-            </h3>
-              <div class="small g-color-white-opacity-0_6"><%= post.created_at.strftime("%d %b %Y") %></div>
+                <%= link_to post.title.truncate(70), post, class: "" %>
+              </h3>
+              <div class="small "><%= post.created_at.strftime("%d %b %Y") %></div>
             </article>
-            <hr class="g-brd-white-opacity-0_1 g-my-10">
+            <hr class="">
           <% end %>
         <% end %>
       </div>
@@ -35,16 +33,16 @@
 
       <!-- Footer Content -->
       <div class="col-lg-4 col-md-6">
-        <div class="u-heading-v2-3--bottom g-brd-white-opacity-0_8 g-mb-20">
-          <h2 class="u-heading-v2__title h6 text-uppercase mb-0">My Contacts</h2>
+        <div class="">
+          <h2 class="">My Contacts</h2>
         </div>
 
-        <address class="g-bg-no-repeat g-font-size-12 mb-0" style="background-image: url(../assets/img/maps/map2.png);">
+        <address class="" >
       <!-- Location -->
       <div class="d-flex g-mb-20">
         <div class="g-mr-10">
-          <span class="u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_1 g-color-white-opacity-0_6">
-            <i class="fa fa-map-marker"></i>
+          <span class="">
+            <i class="fas fa-map-marker"></i>
           </span>
         </div>
         <p class="mb-0">Johannesburg <br> South Africa</p>
@@ -55,14 +53,14 @@
       <!-- Email and Website -->
       <div class="d-flex g-mb-20">
         <div class="g-mr-10">
-          <span class="u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_1 g-color-white-opacity-0_6">
+          <span class="">
             <i class="fa fa-globe"></i>
           </span>
         </div>
         <p class="mb-0">
-          <a class="g-color-white-opacity-0_8 g-color-white--hover" href="mailto:kimberley.smuts@gmail.com">kimberley.smuts@gmail.com</a>
+          <a class="" href="mailto:kimberley.smuts@gmail.com">kimberley.smuts@gmail.com</a>
           <br>
-          <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">www.kimisblog.com</a>
+          <a class="" href="#!">www.kimisblog.com</a>
         </p>
       </div>
       <!-- End Email and Website -->
@@ -75,33 +73,33 @@
 <!-- End Footer -->
 
 <!-- Copyright Footer -->
-<footer class="g-bg-gray-dark-v1 g-color-white-opacity-0_8 g-py-20">
+<footer class="">
   <div class="container">
     <div class="row">
       <div class="col-md-8 text-center text-md-left g-mb-10 g-mb-0--md">
         <div class="d-lg-flex">
-          <small class="d-block g-font-size-default g-mr-10 g-mb-10 g-mb-0--md">2018 &copy; All Rights Reserved.</small>
+          <small class="d-block ">2018 &copy; All Rights Reserved.</small>
           <ul class="u-list-inline">
             <li class="list-inline-item">
-              <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Privacy Policy</a>
+              <a class="" href="#!">Privacy Policy</a>
             </li>
             <li class="list-inline-item">
               <span>|</span>
             </li>
             <li class="list-inline-item">
-              <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Terms of Use</a>
+              <a class="" href="#!">Terms of Use</a>
             </li>
             <li class="list-inline-item">
               <span>|</span>
             </li>
             <li class="list-inline-item">
-              <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">License</a>
+              <a class="" href="#!">License</a>
             </li>
             <li class="list-inline-item">
               <span>|</span>
             </li>
             <li class="list-inline-item">
-              <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Support</a>
+              <a class="" href="#!">Support</a>
             </li>
           </ul>
         </div>
@@ -110,27 +108,27 @@
       <div class="col-md-4 align-self-center">
         <ul class="list-inline text-center text-md-right mb-0">
           <li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Facebook">
-            <a href="#!" class="g-color-white-opacity-0_5 g-color-white--hover">
+            <a href="#!" class="">
               <i class="fab fa-facebook"></i>
             </a>
           </li>
           <li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Skype">
-            <a href="#!" class="g-color-white-opacity-0_5 g-color-white--hover">
+            <a href="#!" class="">
               <i class="fab fa-skype"></i>
             </a>
           </li>
           <li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Linkedin">
-            <a href="#!" class="g-color-white-opacity-0_5 g-color-white--hover">
+            <a href="#!" class="">
               <i class="fab fa-linkedin"></i>
             </a>
           </li>
           <li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Pinterest">
-            <a href="#!" class="g-color-white-opacity-0_5 g-color-white--hover">
+            <a href="#!" class="">
               <i class="fab fa-pinterest"></i>
             </a>
           </li>
           <li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Twitter">
-            <a href="#!" class="g-color-white-opacity-0_5 g-color-white--hover">
+            <a href="#!" class="">
               <i class="fab fa-twitter"></i>
             </a>
           </li>
