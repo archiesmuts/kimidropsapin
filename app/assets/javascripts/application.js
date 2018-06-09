@@ -12,6 +12,7 @@
 //
 //= require holderjs
 //= require jquery3
+//= require jquery-migrate/jquery-migrate.min
 //= require jquery-ui
 //= require rails-ujs
 //= require popper
@@ -20,5 +21,15 @@
 //= require bootstrap-sprockets
 //= require trix
 //= require data-confirm-modal
+//= require slick/slick.min
+//= require hs.core
+//= require components/hs.tabs
+//= require components/hs.go-to
+//= require components/hs.sticky-block
+//= require hs-megamenu/src/hs.megamenu
+//= require masonry/dist/masonry.pkgd.min
+//= require imagesloaded/imagesloaded.pkgd.min
+//= require fancybox/jquery.fancybox.min
 //= require turbolinks
+
 //= require_tree .

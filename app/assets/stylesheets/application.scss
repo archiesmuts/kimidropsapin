@@ -5,4 +5,17 @@
 @import 'font_awesome5';
 @import 'trix';
 @import 'comments';
+@import 'posts';
 @import 'kimisblog';
+// unify blog theme
+@import 'unify-globals.css';
+@import 'unify-core.css';
+@import 'unify-components.css';
+@import 'unify-style-switcher.css';
+@import 'animate.css';
+@import 'hs-megamenu/src/hs.megamenu.css';
+@import 'hamburgers/hamburgers.min.css';
+@import "icon-hs/style.css";
+@import 'slick/slick';
+@import 'slick/slick-theme';
+@import "fancybox/jquery.fancybox.min.css";
