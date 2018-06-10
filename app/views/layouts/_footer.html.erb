@@ -17,7 +17,7 @@
         <div class="">
           <h2 class="mb-0">Latest Posts</h2>
         </div>
-        <% unless params[:action] == "new" || params[:action] == "edit"%>
+        <% unless params[:action] == "new" || params[:action] == "edit"  || controller.controller_name == "tags"%>
           <% @posts.limit(3).each do |post| %>
             <article>
               <h3 class="h6 g-mb-2">

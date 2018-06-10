@@ -41,7 +41,8 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 gem 'bootstrap', '~> 4.1', '>= 4.1.1'
 gem 'bootswatch', '~> 4.1', '>= 4.1.1'
-
+# gem 'acts-as-taggable-on', '~> 5.0'
+gem 'acts-as-taggable-on', :git => 'https://github.com/Fodoj/acts-as-taggable-on', :branch => 'rails-5.2'
 # the maclover/trix gem does not work with rails 5.2
 gem 'trix', git: 'https://github.com/DRBragg/trix'
 # Use ActiveStorage variant

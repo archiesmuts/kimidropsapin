@@ -1,19 +1,31 @@
   <div class="card mr-3 mb-3" style="width: 22rem;"> <!-- style="width: 18rem;" -->
     <img class="card-img-top" src="https://s3.eu-central-1.amazonaws.com/kimis-blog-production/cool-background-tropical-salad-sm.jpg" alt="Tropical Salad">
     <div class="card-body">
-      <p class="card-text"><%= sanitize(post.body.truncate(300)) %></p>
-      <p class="card-text"><%= fa_icon("comments") %>&nbsp;
+      <h4 class="card-title"><%= post.title %></h4>
+      <h6 class="card-subtitle mb-1">Posted <%= time_ago_in_words(post.created_at) %>&nbsp;ago</h6>
+      <p class="card-text"><%= sanitize(post.body.truncate(200  )) %></p>
+      <p class="card-text text-info"><%= fa_icon("comments") %>&nbsp;
         <%= pluralize(post.comments.size, 'comment') %>
       </p>
-      <p class="card-text">
-        <%= link_to 'Read more...', post, class: "g-font-size-13" %>
-      </p>
-      <% if user_signed_in? %>
-      <p>
-        <%= link_to 'Show', post, class: "btn btn-link" %>&nbsp;
-        <%= link_to 'Edit', edit_post_path(post), class: "btn btn-link" %>&nbsp;
-        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link btn-danger" %>
-      </p>
+        <%= link_to 'Read more...', post, class: "card-link" %>
+        <p>
+          <% if user_signed_in? %>
+            <div class="btn-group">
+              <%= link_to 'Edit post', edit_post_path(post), class: "btn btn-sm btn-primary" %>
+              <%= link_to 'Destroy', post, method: :delete,
+                  data: { confirm: 'Are you sure your want to delete this post? If yes, click on confirm!',
+                  title: "Deleting your post and all comments" },
+                  class: "btn btn-sm btn-danger" %>
+            </div>
+          <% end %>
+        </p>
+    </div>
+    <div class="card-footer">
+      <%= fa_icon("tags") %>&nbsp;
+      <% if post.tags.any? %>
+        <%= render post.tags %>
+        <% else %>
+        <span class="badge badge-warning"> - tag me -</span>
       <% end %>
     </div>
   </div>

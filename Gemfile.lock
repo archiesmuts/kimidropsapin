@@ -5,6 +5,14 @@ GIT
     trix (0.11.2)
       rails (> 4.1, <= 6.0)
 
+GIT
+  remote: https://github.com/Fodoj/acts-as-taggable-on
+  revision: ef3797a848bd76a5290d209ff856e55a9f9053c5
+  branch: rails-5.2
+  specs:
+    acts-as-taggable-on (5.0.0)
+      activerecord (~> 5.0)
+
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -295,6 +303,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on!
   administrate (~> 0.10.0)
   better_errors (~> 2.4)
   binding_of_caller
