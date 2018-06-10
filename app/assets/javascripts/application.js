@@ -14,12 +14,12 @@
 //= require jquery3
 //= require jquery-ui
 //= require rails-ujs
+//= require popper
 //= require activestorage
 //= require bootstrap-sprockets
-//= require popper
 //= require font_awesome5
-//= require trix
 //= require data-confirm-modal
+//= require trix
 //= require turbolinks
 
 //= require_tree .

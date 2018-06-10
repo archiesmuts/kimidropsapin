@@ -3,21 +3,8 @@
 @import "bootswatch/cosmo/bootswatch";
 @import "jquery-ui/core";
 @import "jquery-ui/theme";
-@import 'font_awesome5';
 @import 'kimisblog';
-@import 'trix';
 @import 'posts';
 @import 'comments';
-
-// unify blog theme
-// @import 'unify-globals.css';
-// @import 'unify-core.css';
-// @import 'unify-components.css';
-// @import 'unify-style-switcher.css';
-// @import 'animate.css';
-// @import 'hs-megamenu/src/hs.megamenu.css';
-// @import 'hamburgers/hamburgers.min.css';
-// @import "icon-hs/style.css";
-// @import 'slick/slick';
-// @import 'slick/slick-theme';
-// @import "fancybox/jquery.fancybox.min.css";
+@import 'trix';
+@import 'font_awesome5';
