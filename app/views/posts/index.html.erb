@@ -1,11 +1,15 @@
 <!-- ====== Carousel ====== -->
 <div class="mb-10">
-
   <%= render "carousel" %>
+  <div class="d-flex justify-content-center my-3">
+    <% if user_signed_in? %>
+      <%= link_to 'Create a New Post', new_post_path, class: "btn btn-lg btn-primary" %>
+    <% end %>
+  </div>
 </div>
 <!-- Blog Grid Overlap Blocks -->
-<div class="container-fluid px-30 pt-100">
-  <div class="d-flex flex-wrap justify-content-center align-items-stretch mt-100">
+<div class="container-fluid">
+  <div class="d-flex flex-wrap justify-content-center align-items-stretch">
       <%= render @posts %>
   </div>
 </div>
