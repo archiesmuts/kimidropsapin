@@ -5,11 +5,19 @@
 // #stickyblock-image {
 //     background: image-url("img-900-900.jpg");
 // }
-.sticky-block {
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
+#sticky-block {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
 }
+
+.side-image-block {
+  background-image: url("https://s3.eu-central-1.amazonaws.com/kimis-blog-production/orange-squash-soup-cayla1.jpg");
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+
 .firstcharacter {
   color: purple;
   float: left;
@@ -22,6 +30,5 @@
 }
 
 .map {
-
   background-image: url("map.png")
 }
