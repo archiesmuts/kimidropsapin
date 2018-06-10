@@ -36,11 +36,11 @@
           <!-- End Figure Social Icons -->
         </div>
         <!-- End Author -->
-        <div class="d-flex mb-3">
+        <div class="d-flex actions mb-3">
           <%= link_to 'Back to posts', posts_path, class: "btn btn-sm btn-outline-primary" %>
           <% if user_signed_in? %>
-          <% end %>
             <%= link_to 'Edit post', edit_post_path(@post), class: "btn btn-sm btn-primary" %>
+          <% end %>
         </div>
         <div class="mb-40">
           <span class="firstcharacter">
