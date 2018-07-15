@@ -2,137 +2,136 @@
 <div class="container px-0">
   <div class="row mb-3">
     <div class="col-md-3">
-      <button type="button" class="btn btn-success" id="left">Toggle left</button>
+      <button type="button" class="btn btn-success" id="left">Toggle pattern</button>
     </div>
     <div class="col-md-6">
-      <p class="lead">Demo to view and choose one pattern for the left sidebar or both. </p>
-      <p class="lead"> On the left are bubbles and stripes and on the right wallpaper and squares </p>
+      <p class="lead">Demo to view and choose one pattern for the left sidebar, or not! </p>
+      <p class="lead"> Checkout other patterns at <a href="http://www.heropatterns.com/">www.heropatterns.com</a> </p>
     </div>
     <div class="col-md-3">
-      <button type="button" class="btn btn-success" id="right">Toggle right</button>
     </div>
   </div>
   <div class="row">
     <!-- <div id="sticky-block" class="col-md-5 side-image-block" alt="Orange squash soup"></div> -->
-    <div class="col-md-3 bg-bubbles" id="left-col"></div>
-    <div class="col-md-6">
+    <div class="col-md-3 pr-2" id="left-col"></div>
+    <div class="col-md-7">
       <h1 class="h1 text-info"><%= @post.title %></h1>
-        <!-- Author -->
-        <div class="media align-items-center pb-5 mb-2  ">
-          <img class="d-flex img-fluid rounded-circle mr-3" data-src="holder.js/40x40?theme=lava" alt="Image">
-          <div class="media-body">
-            <h4 class="h6">By Kimberley Smuts</h4>
-            <span class="d-block">May 31, 2017</span>
-            <span class="d-block">
-              <%= fa_icon("tags") %>&nbsp;
-              <% if @post.tags.any? %>
-                <%= render @post.tags %>
-                <% else %>
-                <span class="badge badge-warning"> - tag me -</span>
-              <% end %>
-            </span>
-          </div>
-
-          <!-- Figure Social Icons -->
-          <ul class="list-inline mb-0">
-            <li class="list-inline-item g-mx-2">
-              <a class="rounded-circle" href="#!">
-                <i class="fab fa-facebook"></i>
-              </a>
-            </li>
-            <li class="list-inline-item mx-2">
-              <a class="rounded-circle" href="#!">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li class="list-inline-item mx-2">
-              <a class="rounded-circle" href="#!">
-                <i class="fab fa-instagram"></i>
-              </a>
-            </li>
-          </ul>
-          <!-- End Figure Social Icons -->
-        </div>
-        <!-- End Author -->
-        <div class="d-flex actions mb-3">
-          <%= link_to posts_path, class: "btn btn-outline-primary" do %>
-          <%= fa_icon("arrow-left", text: "Back to posts") %>
-          <% end %>
-          <% if user_signed_in? %>
-            <%= link_to 'Edit post', edit_post_path(@post), class: "btn btn-sm btn-primary" %>
-          <% end %>
-        </div>
-        <!-- start of post -->
-        <div class="mb-40">
-          <span class="firstcharacter">
-            <%= (strip_tags @post.body).chr %>
-            <!-- retutns the first character after stripping all the tags -->
-          </span>
-        </span>
-          <p><%= sanitize @post.body[6..-1], attributes: %w(href) %></p>
-          <!--Will return the array from 6 to the last character. -->
-        </div>
-        <!-- end of post -->
-        <!-- comments -->
-        <div>
-          <h3>
-            <%= fa_icon("comments", text: "Comments") %>
-            <small><span class="badge badge-info" id="sizeComments1"></span></small>&nbsp;
-            <% if @post.comments.any? %>
-            <%= link_to "View comments", "#", class: "btn btn-link", id: "comments_link" %>
-            <% else %>
-              <%= link_to "Leave a comment", "#", class: "btn btn-link", id: "comments_link" %>
-            <% end %>
-          </h3>
-          <section id="comments-section">
-            <ul id="list-comments" class="list-group">
-              <% if @post.comments.any? %>
-                <%= render @post.comments %>
+      <!-- Author -->
+      <div class="media align-items-center pb-5 mb-2  ">
+        <img class="d-flex img-fluid rounded-circle mr-3" data-src="holder.js/40x40?theme=lava" alt="Image">
+        <div class="media-body">
+          <h4 class="h6">By Kimberley Smuts</h4>
+          <span class="d-block">May 31, 2017</span>
+          <span class="d-block">
+            <%= fa_icon("tags") %>&nbsp;
+            <% if @post.tags.any? %>
+              <%= render @post.tags %>
               <% else %>
-              <li class="list-group-item list-group-item-info" id="comment_placeholder">
-                <h4>Nobody has commented yet.</h4>
-              </li>
-              <% end %>
-            </ul>
-            <div class="my-2">
-              <div class="card border-primary">
-                <div class="card-header">
-                  New comment
-                </div>
-                <div class="card-body">
-                  <%= render "comments/form" %>
-                </div>
+              <span class="badge badge-warning"> - tag me -</span>
+            <% end %>
+          </span>
+        </div>
+
+        <!-- Figure Social Icons -->
+        <ul class="list-inline mb-0">
+          <li class="list-inline-item g-mx-2">
+            <a class="rounded-circle" href="#!">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </li>
+          <li class="list-inline-item mx-2">
+            <a class="rounded-circle" href="#!">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="list-inline-item mx-2">
+            <a class="rounded-circle" href="#!">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        </ul>
+        <!-- End Figure Social Icons -->
+      </div>
+      <!-- End Author -->
+      <div class="d-flex actions mb-3">
+        <%= link_to posts_path, class: "btn btn-outline-primary" do %>
+        <%= fa_icon("arrow-left", text: "Back to posts") %>
+        <% end %>
+        <% if user_signed_in? %>
+          <%= link_to 'Edit post', edit_post_path(@post), class: "btn btn-sm btn-primary" %>
+        <% end %>
+      </div>
+      <!-- start of post -->
+      <div class="mb-40">
+        <span class="firstcharacter">
+          <%= (strip_tags @post.body).chr %>
+          <!-- retutns the first character after stripping all the tags -->
+        </span>
+        <p>
+          <%= sanitize @post.body[6..-1], attributes: %w(href) %>
+        </p>
+        <!--Will return the array from 6 to the last character. -->
+      </div>
+      <!-- end of post -->
+      <!-- comments -->
+      <div class="comments">
+        <h3>
+          <%= fa_icon("comments", text: "Comments") %>
+          <small><span class="badge badge-info" id="sizeComments1"></span></small>&nbsp;
+          <% if @post.comments.any? %>
+          <%= link_to "View comments", "#", class: "btn btn-link", id: "comments_link" %>
+          <% else %>
+            <%= link_to "Leave a comment", "#", class: "btn btn-link", id: "comments_link" %>
+          <% end %>
+        </h3>
+        <section id="comments-section">
+          <ul id="list-comments" class="list-group">
+            <% if @post.comments.any? %>
+              <%= render @post.comments %>
+            <% else %>
+            <li class="list-group-item list-group-item-info" id="comment_placeholder">
+              <h4>Nobody has commented yet.</h4>
+            </li>
+            <% end %>
+          </ul>
+          <div class="my-2">
+            <div class="card border-primary">
+              <div class="card-header">
+                New comment
+              </div>
+              <div class="card-body">
+                <%= render "comments/form" %>
               </div>
             </div>
-          </section>
-        </div>
-        <!-- end of comments -->
-
-        <!-- Social Icons -->
-        <div class="text-center pt-50">
-          <h3 class="h6 text-uppercase mb-3">Share:</h3>
-          <ul class="list-inline mb-0">
-            <li class="list-inline-item g-mx-2">
-              <a class="" href="#!">
-                <i class="fab fa-facebook"></i>
-              </a>
-            </li>
-            <li class="list-inline-item mx-2">
-              <a class="" href="#!">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-
-            <li class="list-inline-item mx-2">
-              <a class="" href="#!">
-                <i class="fab fa-instagram"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <!-- End Social Icons -->
+          </div>
+        </section>
       </div>
-    <div class="col-md-3 bg-wallpaper" id="right-col"></div>
+      <!-- end of comments -->
+      <!-- Social Icons -->
+      <div class="text-center pt-50">
+        <h3 class="h6 text-uppercase mb-3">Share:</h3>
+        <ul class="list-inline mb-0">
+          <li class="list-inline-item g-mx-2">
+            <a class="" href="#!">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </li>
+          <li class="list-inline-item mx-2">
+            <a class="" href="#!">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+
+          <li class="list-inline-item mx-2">
+            <a class="" href="#!">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- End Social Icons -->
+    </div>
+    <div class="col-md-2"></div>
   </div>
   </div>
 </div>
