@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Kimisblog</title>
+    <title>Kimi Drops a Pin</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><%= content_for?(:title) ? yield(:title) : "kimisblog" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "kimisblog" %>">
+    <title><%= content_for?(:title) ? yield(:title) : "Kimi Drops a Pin" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Kimi Drops a Pin" %>">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
     <!-- Header -->
-    <header id="js-header" class="u-header u-header--static">
-      <%= render "layouts/navigation_links" %>
+    <header>
+      <%= render "layouts/navigation" %>
     </header>
     <!-- End Header -->
     <main role="main">
@@ -22,14 +22,5 @@
     <footer class="py-5">
       <%= render "layouts/footer" %>
     </footer>
-    <!-- unify back to top button -->
-    <!-- <a class="js-go-to u-go-to-v1" href="#!"
-      data-type="fixed"
-      data-position='{ "bottom": 15, "right": 15 }'
-      data-offset-top="400"
-      data-compensation="#js-header"
-      data-show-effect="zoomIn">
-      <i class="hs-icon hs-icon-arrow-top"></i>
-    </a> -->
   </body>
 </html>
