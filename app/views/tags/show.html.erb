@@ -1,13 +1,15 @@
-<div class="text-center">
+<div class="text-center mt-3">
   <h1>
-    <%= link_to posts_path, class: "btn btn-lg btn-link" do %>
-      <%= fa_icon("long-arrow-alt-left", text: "All posts") %>
-    <% end %>
-    &nbsp;Posts tagged with "<%= @tag.name %>"
+    Posts tagged with "<%= @tag.name %>"
   </h1>
+  <p>
+    <%= link_to posts_path, class: "btn btn-outline-primary" do %>
+      <%= fa_icon("arrow-left", text: "All posts") %>
+    <% end %>
+  </p>
 </div>
-<div class="container-fluid">
-  <div class="d-flex flex-wrap justify-content-center align-items-stretch">
+<div class="container">
+  <div class="row">
       <%= render @posts %>
   </div>
 </div>
