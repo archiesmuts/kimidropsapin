@@ -1,11 +1,15 @@
 class PostsController < ApplicationController
+  include Pagy::Backend
+
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :tag_cloud
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.order("created_at DESC")
+    # @posts = Post.order("created_at DESC")
+    @pagy, @records = pagy(Post.order("created_at DESC"), items: 6)
+
   end
 
   # GET /posts/1

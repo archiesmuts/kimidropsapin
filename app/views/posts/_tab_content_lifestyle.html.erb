@@ -15,13 +15,13 @@
   <div class="tab-pane fade show active" id="beauty" role="tabpanel">
     <h2 class="text-center text-success">Beauty</h2>
     <div class="row">
-      <%= render @posts.tagged_with(["lifestyle", "beauty"], :any => true) %>
+      <%= render @records.tagged_with(["lifestyle", "beauty"], :any => true) %>
     </div>
   </div>
   <div class="tab-pane fade" id="fashion" role="tabpanel">
     <h2 class="text-center text-success">Fashion</h2>
     <div class="row">
-      <%= render @posts.tagged_with(["lifestyle", "fashion"], :any => true) %>
+      <%= render @records.tagged_with(["lifestyle", "fashion"], :any => true) %>
     </div>
   </div>
 </div>

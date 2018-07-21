@@ -21,6 +21,7 @@
 //= require data-confirm-modal
 //= require trix
 //= require jquery.scrollTo.min
+
 //= require turbolinks
 
 //= require_tree .
