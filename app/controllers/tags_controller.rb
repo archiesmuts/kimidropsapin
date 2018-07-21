@@ -1,4 +1,5 @@
 class TagsController < ApplicationController
+  layout "application_tags"
   def index
     @tags = ActsAsTaggableOn::Tag.all
   end
