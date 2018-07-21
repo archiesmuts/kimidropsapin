@@ -1,5 +1,5 @@
 <!-- ====== Carousel ====== -->
-<div class="mb-10">
+<div class="mb-1">
   <%= render "carousel" %>
   <div class="d-flex justify-content-center my-3">
     <% if user_signed_in? %>
@@ -7,9 +7,49 @@
     <% end %>
   </div>
 </div>
+
 <!-- Blog Grid Overlap Blocks -->
-<div class="container-fluid">
-  <div class="row ">
-      <%= render @posts %>
+<div class="container-fluid"  >
+  <ul class="nav nav-pills nav-fill mb-3">
+    <li class="nav-item">
+      <a class="nav-link active" id="all-posts-pill" href="#all-posts" data-toggle="pill">All Posts</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="travel-pill" href="#travel-pane" data-toggle="pill"  title="Gluten free, Photos">Travel</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" id="lifestyle-pill" href="#lifestyle-pane" data-toggle="pill"  title="Beauty and Fashion">Lifestyle</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" id="reviews-pill" href="#reviews-pane" data-toggle="pill"  title="Products and Eating out">Reviews</a>
+    </li>
+
+  </ul>
+  <div class="tab-content" id="list-posts">
+    <div class="tab-pane fade show active" id="all-posts" role="tabpanel">
+      <%= render "tab_content_all_posts" %>
+    </div>
+    <div class="tab-pane fade" id="travel-pane" role="tabpanel">
+      <%= render "tab_content_travel" %>
+    </div>
+
+    <div class="tab-pane fade" id="lifestyle-pane" role="tabpanel">
+      <%= render "tab_content_lifestyle" %>
+    </div>
+
+    <div class="tab-pane fade" id="reviews-pane" role="tabpanel">
+      <%= render "tab_content_reviews" %>
+    </div>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="d-flex flex-wrap justify-content-center mb-3 bg-bubbles">
+    <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+      <%= link_to tag.name, tag_path(tag), class: "#{css_class} btn btn-link" %>
+    <% end %>
   </div>
 </div>

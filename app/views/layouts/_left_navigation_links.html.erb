@@ -1,36 +1,36 @@
 <!-- left navigation links -->
-<li class="nav-item active">
-  <a class="nav-link" href="<%= root_path %>">Home<span class="sr-only">(current)</span></a>
-</li>
-
-<li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" id="travelDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Travel
-  </a>
-  <div class="dropdown-menu" aria-labelledby="travelDropdown">
-    <a class="dropdown-item" href="#">Gluten free</a>
-    <a class="dropdown-item" href="#">Photos</a>
-    <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-</li>
-<li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" id="lifestyleDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Lifestyle
-  </a>
-  <div class="dropdown-menu" aria-labelledby="lifestyleDropdown">
-    <a class="dropdown-item" href="#">Beauty</a>
-    <a class="dropdown-item" href="#">Fashion</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-</li>
-<li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" id="reviewsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Reviews
-  </a>
-  <div class="dropdown-menu" aria-labelledby="reviewsDropdown">
-    <a class="dropdown-item" href="#">Eating out</a>
-    <a class="dropdown-item" href="#">Products</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-</li>
+<% if params[:action] == "index" && controller.controller_name == "posts" %>
+  <li class="nav-item">
+    <%= link_to "About me!", page_path('about_me'), class: "nav-link" %>
+  </li>
+  <li class="nav-item active">
+    <a class="nav-link" id="toAllPostsPill" href="#all-posts-pill">All posts</a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="travelDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Travel
+    </a>
+    <div class="dropdown-menu" aria-labelledby="travelDropdown">
+      <a class="dropdown-item" id="toTravelPill1" href="#travel-pill">Gluten free</a>
+      <a class="dropdown-item" id="toTravelPill2" href="#travel-pill">Photos</a>
+    </div>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="lifestyleDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Lifestyle
+    </a>
+    <div class="dropdown-menu" aria-labelledby="lifestyleDropdown">
+      <a class="dropdown-item" id="toLifestylePill1" href="#lifestyle-pill">Beauty</a>
+      <a class="dropdown-item" id="toLifestylePill2"  href="#lifestyle-pill">Fashion</a>
+    </div>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="reviewsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Reviews
+    </a>
+    <div class="dropdown-menu" aria-labelledby="reviewsDropdown">
+      <a class="dropdown-item" id="toReviewsPill1" href="#reviews-eating-pill">Eating out</a>
+      <a class="dropdown-item" id="toReviewsPill2"  href="#reviews-products-pill">Products</a>
+    </div>
+  </li>
+<% end %>

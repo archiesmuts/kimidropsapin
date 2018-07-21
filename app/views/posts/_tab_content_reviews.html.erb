@@ -1,0 +1,27 @@
+<h1 class="text-center text-info">Reviews</h1>
+<div class="row">
+  <div class="col-sm-6 offset-sm-3">
+    <ul class="nav nav-tabs mb-3">
+      <li class="nav-item">
+        <a class="nav-link active" id="eating-out-pill" href="#eating-out" data-toggle="pill">Eating out</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="products-pill" href="#products" data-toggle="pill">Products</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="tab-content">
+  <div class="tab-pane fade show active" id="eating-out" role="tabpanel">
+    <h2 class="text-center text-success">Reviews on Eating out</h2>
+    <div class="row">
+      <%= render @posts.tagged_with(["reviews", "eating out"], :any => true) %>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="products" role="tabpanel">
+    <h2 class="text-center text-success">Reviews on Products I Use</h2>
+    <div class="row">
+      <%= render @posts.tagged_with(["reviews", "products"], :any => true) %>
+    </div>
+  </div>
+</div>

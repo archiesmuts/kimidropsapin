@@ -1,0 +1,28 @@
+<h1 class="text-center text-info">Travel</h1>
+<div class="row">
+  <div class="col-sm-6 offset-sm-3">
+    <ul class="nav  nav-tabs mb-3">
+      <li class="nav-item">
+        <a class="nav-link active" id="gluten-free-pill" href="#gluten-free" data-toggle="pill">Gluten free</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="photos-pill" href="#photos" data-toggle="pill">Photos</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="tab-content">
+  <div class="tab-pane fade show active" id="gluten-free" role="tabpanel">
+    <h2 class="text-center text-success">Eating Gluten Free while Travelling</h2>
+    <div class="row">
+      <%= render @posts.tagged_with(["travel", "gluten free"], :any => true) %>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="photos" role="tabpanel">
+
+    <h2 class="text-center text-success">Selfies and Real Photos</h2>
+    <div class="row">
+      <%= render @posts.tagged_with(["travel", "photos"], :any => true) %>
+    </div>
+  </div>
+</div>
