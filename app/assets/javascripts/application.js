@@ -20,6 +20,7 @@
 //= require font_awesome5
 //= require data-confirm-modal
 //= require trix
+//= require jquery.scrollTo.min
 //= require turbolinks
 
 //= require_tree .
