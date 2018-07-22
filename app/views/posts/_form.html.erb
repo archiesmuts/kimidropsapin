@@ -25,10 +25,11 @@
     <%= form.trix_editor :body %>
   </div>
 
-  <div class="actions">
-    <%= link_to 'Back', posts_path, class: "btn btn-lg btn-outline-primary" %>
+  <div class="btn-group">
     <% unless post.new_record? %>
-      <%= link_to 'Show Post', @post, class: "btn btn-lg btn-primary" %>
+      <%= link_to  @post, class: "btn btn-lg btn-outline-primary" do %>
+        <%= fa_icon("times", text: "Cancel") %>
+      <% end %>
     <% end %>
     <%= form.submit class: "btn btn-lg btn-primary" %>
   </div>

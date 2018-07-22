@@ -1,9 +1,7 @@
 <!-- Blog Single Item Blocks -->
-<div class="container px-0 mt-3">
-
+<div class="container-fluid px-0 pt-5">
   <div class="row">
-    <!-- <div id="sticky-block" class="col-md-5 side-image-block" alt="Orange squash soup"></div> -->
-    <div class="col-md-3 pr-2 pt-3 bg-bubbles" id="left-col"></div>
+    <div class="col-md-3 pr-2 bg-stripes" id="left-col"></div>
     <div class="col-md-7">
       <h1 class="h1 text-info"><%= @post.title %></h1>
       <!-- Author -->
@@ -31,7 +29,7 @@
           </li>
           <li class="list-inline-item mx-2">
             <a class="rounded-circle" href="#!">
-              <i class="fab fa-twitter"></i>
+              <i class="fab fa-pinterest"></i>
             </a>
           </li>
           <li class="list-inline-item mx-2">
@@ -51,7 +49,7 @@
           <%= link_to 'Edit post', edit_post_path(@post), class: "btn btn-sm btn-primary" %>
         <% end %>
       </div>
-      <!-- start of post -->
+      <!-- start of post body-->
       <div class="mb-40">
         <span class="firstcharacter">
           <%= (strip_tags @post.body).chr %>
@@ -63,7 +61,7 @@
         <!--Will return the array from 6 to the last character. -->
       </div>
       <!-- end of post -->
-      <!-- comments -->
+      <!-- start of comments -->
       <div class="comments">
         <h3>
           <%= fa_icon("comments", text: "Comments") %>
@@ -108,7 +106,7 @@
           </li>
           <li class="list-inline-item mx-2">
             <a class="" href="#!">
-              <i class="fab fa-twitter"></i>
+              <i class="fab fa-pinterest"></i>
             </a>
           </li>
 
@@ -121,8 +119,6 @@
       </div>
       <!-- End Social Icons -->
     </div>
-    <div class="col-md-2"></div>
-  </div>
   </div>
 </div>
 <!-- End Blog Single Item Blocks -->

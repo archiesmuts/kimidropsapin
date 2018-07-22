@@ -1,12 +1,12 @@
 <%# navigation styled for Bootstrap 4.0 %>
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <%= link_to "Kimi Drops a Pin", root_path, class: 'navbar-brand' %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarDark" aria-controls="navbarDark" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarDark">
-    <ul class="navbar-nav nav-pills ml-auto">
+    <ul class="navbar-nav ml-auto">
       <%= render 'layouts/left_navigation_links' %>
     </ul>
     <ul class="nav navbar-nav ml-auto">
