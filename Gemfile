@@ -46,14 +46,14 @@ gem 'acts-as-taggable-on', :git => 'https://github.com/Fodoj/acts-as-taggable-on
 # the maclover/trix gem does not work with rails 5.2
 gem 'trix', git: 'https://github.com/DRBragg/trix'
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
+gem 'mini_magick', '~> 4.8'
 # gem 'aws-sdk-s3', '~> 1.13', require: false
 # gem 'image_processing', '~> 1.2'
 gem 'sendgrid-ruby', '~> 5.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'pagy'
-
+gem "aws-sdk-s3", require: false
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rails-assets-holderjs', source: 'https://rails-assets.org'
