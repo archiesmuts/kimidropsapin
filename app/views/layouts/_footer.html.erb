@@ -1,24 +1,29 @@
+<hr>
 <!-- Footer -->
-<div id="contacts-section" class="">
+<footer>
   <div class="container">
     <div class="row">
-      <!-- Footer Content -->
-      <div class="col-lg-4 col-md-6 ">
-        <div class="">
-          <h2 class="mb-0">About Me</h2>
-        </div>
-
-        <p>About me dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero tincidunt sodales.</p>
+      <div class="col-lg-4 col-md-6">
+        <h2 class="mb-0">
+          About Me
+        </h2>
+        <p>
+          About me dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl
+          id libero tincidunt sodales.
+        </p>
+        <p>
+          <%= link_to page_path("about_me") do %>
+            Read more&nbsp;<%= fa_icon("angle-double-right") %>
+          <% end %>
+        </p>
       </div>
-      <!-- End Footer Content -->
 
-      <!-- Footer Content -->
-      <div class="col-lg-4 col-md-6 ">
+      <div class="col-lg-4 col-md-6">
         <% if params[:action] == "index" && controller.controller_name == "posts"%>
             <h2 class="mb-0">Latest Posts</h2>
           <% @records.limit(3).each do |post| %>
             <article>
-              <h3 class="h6 g-mb-2">
+              <h3 class="h6">
                 <%= link_to post.title.truncate(70), post, class: "" %>
               </h3>
               <div class="small "><%= post.created_at.strftime("%d %b %Y") %></div>
@@ -27,102 +32,65 @@
           <% end %>
         <% end %>
       </div>
-      <!-- End Footer Content -->
 
-      <!-- Footer Content -->
-      <div class="col-lg-4 col-md-6">
-        <div class="">
-          <h2 class="">My Contacts</h2>
-        </div>
-
-        <address class="map">
-
-          <!-- Location -->
-          <div class="d-flex g-mb-20">
-            <div class="">
-              <span class="">
-                <i class="fas fa-map-marker"></i>&nbsp;
-              </span>
-            </div>
-            <p class="mb-0">Johannesburg, South Africa</p>
-          </div>
+      <div class="col-lg-4 col-md-6 globe">
+        <h2 class="">My Contacts</h2>
+        <address>
+          <p>
+            <%= fa_icon("map-marker", text: "Johannesburg, South Africa", type: "solid") %>
+          </p>
           <!-- End Location -->
-
-
           <!-- Email and Website -->
-          <div class="d-flex">
-            <div class="g-mr-10">
-              <span class="">
-
-                <i class="fa fa-globe"></i>&nbsp;
-              </span>
-            </div>
-            <p class="mb-0">
-              <a class="" href="mailto:kimberley.smuts@gmail.com">kimberley.smuts@gmail.com</a>
-              <br>
-              <a class="" href="#!">www.kimidropsapin.fyi</a>
-            </p>
-          </div>
+          <p>
+            <%= fa_icon("at") %>&nbsp;
+            <a class="" href="mailto:kimberley.smuts@gmail.com">kimberley.smuts@gmail.com</a>
+          </p>
+          <p>
+            <%= fa_icon("globe") %>&nbsp;
+            <a class="" href="#!">www.kimidropsapin.fyi</a>
+          </p>
           <!-- End Email and Website -->
         </address>
       </div>
-      <!-- End Footer Content -->
     </div>
-  </div>
-</div>
-<!-- End Footer -->
-
-<!-- Copyright Footer -->
-<footer class="">
-  <div class="container">
+    <hr>
     <div class="row">
-      <div class="col-md-8 text-center text-md-left">
-        <div class="d-lg-flex">
-          <small class="d-block ">2018 &copy; All Rights Reserved.</small>
-          <ul class="u-list-inline">
-            <li class="list-inline-item">
-              <a class="" href="#!">Privacy Policy</a>
-            </li>
-            <li class="list-inline-item">
-              <span>|</span>
-            </li>
-            <li class="list-inline-item">
-              <a class="" href="#!">Terms of Use</a>
-            </li>
-            <li class="list-inline-item">
-              <span>|</span>
-            </li>
-            <li class="list-inline-item">
-              <a class="" href="#!">License</a>
-            </li>
-            <li class="list-inline-item">
-              <span>|</span>
-            </li>
-            <li class="list-inline-item">
-              <a class="" href="#!">Support</a>
-            </li>
-          </ul>
-        </div>
+      <div class="col-md-8">
+        <ul class="u-list-inline">
+          <li class="list-inline-item">
+            2018 &copy; All Rights Reserved.
+          </li>
+          <li class="list-inline-item">
+            <span>|</span>
+          </li>
+          <li class="list-inline-item">
+            <%= link_to "Privacy Policy", page_path("privacy_policy"), class: "btn btn-link" %>
+          </li>
+          <li class="list-inline-item">
+            <span>|</span>
+          </li>
+          <li class="list-inline-item">
+            <%= link_to "Terms of use", page_path("terms_of_use"), class: "btn btn-link" %>
+          </li>
+        </ul>
       </div>
-
-      <div class="col-md-4 align-self-center">
+      <div class="col-md-4">
         <ul class="list-inline text-center text-md-right mb-0">
           <li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Facebook">
             <a href="#!" class="">
-              <i class="fab fa-facebook"></i>
+              <i class="fab fa-facebook fa-2x"></i>
             </a>
           </li>
           <li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Instagram">
             <a href="#!" class="">
-              <i class="fab fa-instagram"></i>
+              <i class="fab fa-instagram fa-2x"></i>
             </a>
           </li>
           <li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Pinterest">
             <a href="#!" class="">
-              <i class="fab fa-pinterest"></i>
+              <i class="fab fa-pinterest fa-2x"></i>
             </a>
           </li>
-
         </ul>
       </div>
     </div>

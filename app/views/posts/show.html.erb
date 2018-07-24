@@ -5,7 +5,7 @@
     <div class="col-md-7">
       <h1 class="h1 text-info"><%= @post.title %></h1>
       <!-- Author -->
-      <div class="media align-items-center pb-5 mb-2  ">
+      <div class="media align-items-center mb-2">
         <img class="d-flex img-fluid rounded-circle mr-3" data-src="holder.js/40x40?theme=lava" alt="Image">
         <div class="media-body">
           <h4 class="h6">By Kimberley Smuts</h4>
@@ -18,31 +18,32 @@
               <span class="badge badge-warning"> - tag me -</span>
             <% end %>
           </span>
+
         </div>
 
         <!-- Figure Social Icons -->
         <ul class="list-inline mb-0">
           <li class="list-inline-item g-mx-2">
             <a class="rounded-circle" href="#!">
-              <i class="fab fa-facebook"></i>
+              <i class="fab fa-facebook fa-2x"></i>
             </a>
           </li>
           <li class="list-inline-item mx-2">
             <a class="rounded-circle" href="#!">
-              <i class="fab fa-pinterest"></i>
+              <i class="fab fa-pinterest fa-2x"></i>
             </a>
           </li>
           <li class="list-inline-item mx-2">
             <a class="rounded-circle" href="#!">
-              <i class="fab fa-instagram"></i>
+              <i class="fab fa-instagram fa-2x"></i>
             </a>
           </li>
         </ul>
         <!-- End Figure Social Icons -->
       </div>
       <!-- End Author -->
-      <div class="d-flex actions mb-3">
-        <%= link_to posts_path, class: "btn btn-outline-primary" do %>
+      <div class="btn-group mb-2">
+        <%= link_to posts_path, class: "btn btn-sm btn-outline-primary" do %>
         <%= fa_icon("arrow-left", text: "Back to posts") %>
         <% end %>
         <% if user_signed_in? %>
@@ -61,6 +62,13 @@
         <!--Will return the array from 6 to the last character. -->
       </div>
       <!-- end of post -->
+      <div class="row my-2">
+          <% @post.photos.each do |photo| %>
+          <div class="col-md-4">
+            <%= image_tag photo.variant(resize: "200x200") %>
+          </div>
+          <% end %>
+      </div>
       <!-- start of comments -->
       <div class="comments">
         <h3>
@@ -95,29 +103,6 @@
         </section>
       </div>
       <!-- end of comments -->
-      <!-- Social Icons -->
-      <div class="text-center pt-50">
-        <h3 class="h6 text-uppercase mb-3">Share:</h3>
-        <ul class="list-inline mb-0">
-          <li class="list-inline-item g-mx-2">
-            <a class="" href="#!">
-              <i class="fab fa-facebook"></i>
-            </a>
-          </li>
-          <li class="list-inline-item mx-2">
-            <a class="" href="#!">
-              <i class="fab fa-pinterest"></i>
-            </a>
-          </li>
-
-          <li class="list-inline-item mx-2">
-            <a class="" href="#!">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <!-- End Social Icons -->
     </div>
   </div>
 </div>
