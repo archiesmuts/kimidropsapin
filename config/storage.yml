@@ -32,4 +32,4 @@ amazon:
 #   service: Mirror
 #   primary: local
 #   mirrors: [ amazon, google, microsoft ]
-#how do I push rails crdentails to heroku
+#how do I push rails credentails to heroku
