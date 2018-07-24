@@ -4,7 +4,8 @@ class Post < ApplicationRecord
   friendly_id :title, use: :slugged
 
   has_many :comments, inverse_of: :post, dependent: :destroy
-  # has_many_attached :images
+  has_one_attached :header_image
+  has_many_attached :photos
 
   validates :title, :body, :slug, presence: true
 

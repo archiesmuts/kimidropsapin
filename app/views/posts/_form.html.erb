@@ -15,6 +15,11 @@
     <%= form.label :title %>
     <%= form.text_field :title, class: "form-control" %>
   </div>
+
+  <div class="form-group">
+    <%= form.label :header_image %>
+    <%= form.file_field :header_image, class: "form-control" %>
+  </div>
   <div class="form-group">
     <%= form.label :tag_list, "Tag post by adding 'tags' separated by a comma, e.g. one, two, three, twenty four, five" %>
     <%= form.text_field :tag_list, value: form.object.tag_list.to_s, class: "form-control" %>
@@ -24,7 +29,10 @@
     <%#= form.text_area :body, class: "form-control" %>
     <%= form.trix_editor :body %>
   </div>
-
+  <div class="form-group">
+    <%= form.label :photos %>
+    <%= form.file_field :photos, multiple: true, class: "form-control" %>
+  </div>
   <div class="btn-group">
     <% unless post.new_record? %>
       <%= link_to  @post, class: "btn btn-lg btn-outline-primary" do %>
