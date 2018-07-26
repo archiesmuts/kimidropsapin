@@ -8,3 +8,9 @@
 @import 'comments';
 @import 'trix';
 @import 'font_awesome5';
+@import 'slick';
+@import 'slick-theme';
+
+.slick-prev::before, .slick-next::before {
+  color: purple;
+}

@@ -57,6 +57,8 @@ gem "aws-sdk-s3", require: false
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rails-assets-holderjs', source: 'https://rails-assets.org'
+#  jQuery Slick plugin by Ken Wheeler
+gem 'jquery-slick-rails', '~> 1.9'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,5 +1,5 @@
 <!-- Blog Single Item Blocks -->
-<div class="container-fluid px-0 pt-5">
+<div class="container-fluid pt-5">
   <div class="row">
     <div class="col-md-3 pr-2 bg-stripes" id="left-col"></div>
     <div class="col-md-7">
@@ -51,7 +51,7 @@
         <% end %>
       </div>
       <!-- start of post body-->
-      <div class="mb-40">
+      <div class="mb-4 mt-2">
         <span class="firstcharacter">
           <%= (strip_tags @post.body).chr %>
           <!-- retutns the first character after stripping all the tags -->
@@ -62,15 +62,22 @@
         <!--Will return the array from 6 to the last character. -->
       </div>
       <!-- end of post -->
-      <div class="row my-2">
-          <% @post.photos.each do |photo| %>
-          <div class="col-md-4">
-            <%= image_tag photo.variant(resize: "200x200") %>
+      <!-- start of photo slider -->
+      <div class="row">
+        <div class="col-sm-7 offset-sm-3 my-2">
+          <h4 class="text-center"> Sharing <%= pluralize(@post.photos.size, 'photo' ) %></h4>
+          <div class="mx-auto d-block my-2 post-slider">
+              <% @post.photos.each do |photo| %>
+              <div>
+                <%= image_tag photo.variant(resize: "500x400"), class: "img-fluid img-thumbnail" %>
+              </div>
+              <% end %>
           </div>
-          <% end %>
+        </div>
       </div>
+      <!-- end of photo slider -->
       <!-- start of comments -->
-      <div class="comments">
+      <div class="comments mt-3">
         <h3>
           <%= fa_icon("comments", text: "Comments") %>
           <small><span class="badge badge-info" id="sizeComments1"></span></small>&nbsp;

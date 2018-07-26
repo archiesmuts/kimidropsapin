@@ -12,13 +12,16 @@
   <% end %>
 
   <div class="form-group">
-    <%= form.label :title %>
+    <%= form.label :title, "Give your post an informative snazzy title." %>
     <%= form.text_field :title, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= form.label :header_image %>
+    <%= form.label :header_image, "Add a header image for this post" %>
     <%= form.file_field :header_image, class: "form-control" %>
+    <small id="headerImageHelpBlock" class="form-text text-info">
+      The header image will appear in the header section of this post in the "All Posts" view.
+    </small>
   </div>
   <div class="form-group">
     <%= form.label :tag_list, "Tag post by adding 'tags' separated by a comma, e.g. one, two, three, twenty four, five" %>
@@ -30,7 +33,7 @@
     <%= form.trix_editor :body %>
   </div>
   <div class="form-group">
-    <%= form.label :photos %>
+    <%= form.label :photos, "Add one or more photos to display below body of post." %>
     <%= form.file_field :photos, multiple: true, class: "form-control" %>
   </div>
   <div class="btn-group">
