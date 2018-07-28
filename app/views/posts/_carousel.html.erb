@@ -7,6 +7,7 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img class="d-block img-fluid" src="https://s3.eu-central-1.amazonaws.com/kimis-blog-production/meal-plate-food-brooke-lark-sm.jpg" alt="Food on a plate">
+        <!-- display on large > screens -->
       <div class="carousel-caption d-none d-md-block">
         <h1 class="display-4">
           <%= fa_icon("map-pin", text: "Kimi Drops a Pin") %>
@@ -16,6 +17,16 @@
           This is the first draft. Just a reminder that as
           the owner of the blog you have to sign up first.
         </p>
+        <ul class="list-inline">
+          <li class="list-inline-item">Kimberley Smuts | </li>
+          <li class="list-inline-item"><%= Time.now %></li>
+        </ul>
+      </div>
+        <!-- display on extra small small screens only -->
+      <div class="carousel-caption d-block d-md-none">
+        <h1 class="display-4">
+          <%= fa_icon("map-pin", text: "Kimi Drops a Pin") %>
+        </h1>
         <ul class="list-inline">
           <li class="list-inline-item">Kimberley Smuts | </li>
           <li class="list-inline-item"><%= Time.now %></li>
@@ -32,6 +43,16 @@
           You can create, edit and delete posts only after you sign in with your
           email and password. No sign-in is required for viewing posts and leaving comments.
         </p>
+      </div>
+      <!-- display on extra small small screens only -->
+      <div class="carousel-caption d-block d-md-none">
+        <h1 class="display-4">
+          <%= fa_icon("map-pin", text: "Kimi Drops a Pin") %>
+        </h1>
+        <ul class="list-inline">
+          <li class="list-inline-item">Kimberley Smuts | </li>
+          <li class="list-inline-item"><%= Time.now %></li>
+        </ul>
       </div>
     </div>
   </div>

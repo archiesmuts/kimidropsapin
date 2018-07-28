@@ -1,12 +1,15 @@
 <!-- ====== Carousel ====== -->
-<div class="mb-1">
-  <%= render "carousel" %>
+  <div class="d-none d-md-block">
+    <%= render "carousel" %>
+  </div>
+  <div class="d-block d-md-none">
+      <%= render "slick_carousel" %>
+  </div>
   <div class="d-flex justify-content-center my-3">
     <% if user_signed_in? %>
       <%= link_to 'Create a New Post', new_post_path, class: "btn btn-lg btn-primary" %>
     <% end %>
   </div>
-</div>
 
 <!-- Blog Grid Overlap Blocks -->
 <div class="container-fluid"  >

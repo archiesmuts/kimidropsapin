@@ -4,9 +4,13 @@ jQuery(document).on "turbolinks:load", ->
     # $('#hr-travel-gluten-free').addClass("red-line")
 
   $('.post-slider').slick
-    dots: true,
-    infinite: true,
-    speed: 500,
-    fade: true,
+    dots: true
+    infinite: true
+    speed: 500
+    fade: true
     cssEase: 'linear'
     adaptiveHeight: true
+
+  $('.slick-carousel').slick
+    autoplay: true
+    autoplaySpeed: 5000

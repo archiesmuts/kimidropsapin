@@ -44,12 +44,24 @@
       <!-- End Author -->
       <div class="btn-group mb-2">
         <%= link_to posts_path, class: "btn btn-sm btn-outline-primary" do %>
-        <%= fa_icon("arrow-left", text: "Back to posts") %>
+          <%= fa_icon("arrow-left", text: "Back to posts") %>
         <% end %>
         <% if user_signed_in? %>
           <%= link_to 'Edit post', edit_post_path(@post), class: "btn btn-sm btn-primary" %>
         <% end %>
       </div>
+      <p>
+        <% if user_signed_in? && @post.header_image.attached? %>
+          <div class="media">
+            <%= image_tag @post.header_image.variant(resize: "50x50"), class: "img-thumbnail" %>
+            <div class="media-body">
+              <%= link_to 'Remove header image', remove_header_image_post_path(@post, @header_image),
+              method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
+            </div>
+          </div>
+        <% end %>
+      </p>
+
       <!-- start of post body-->
       <div class="mb-4 mt-2">
         <span class="firstcharacter">
@@ -65,13 +77,19 @@
       <!-- start of photo slider -->
       <div class="row">
         <div class="col-sm-7 offset-sm-3 my-2">
-          <h4 class="text-center"> Sharing <%= pluralize(@post.photos.size, 'photo' ) %></h4>
+          <% if user_signed_in? && @post.photos.attached? %>
+            <h4 class="text-center">Sharing <%= pluralize(@post.photos.size, 'photo' ) %></h4>
+            <p class="text-center">
+              <%= link_to 'Remove photos', remove_photo_image_post_path(@post),
+                method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
+            </p>
+          <% end %>
           <div class="mx-auto d-block my-2 post-slider">
-              <% @post.photos.each do |photo| %>
+            <% @post.photos.each do |photo| %>
               <div>
                 <%= image_tag photo.variant(resize: "500x400"), class: "img-fluid img-thumbnail" %>
               </div>
-              <% end %>
+            <% end %>
           </div>
         </div>
       </div>
