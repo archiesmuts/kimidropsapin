@@ -68,7 +68,23 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  def remove_header_image
+    @post = Post.friendly.find(params[:id])
+    @header_image = @post.header_image
+    @header_image.purge_later # or use purge_later
+    # redirect_back(fallback_location: collections_path)
+    respond_to do |format|
+      format.html { redirect_to @post, notice: 'Header image was deleted.'}
+      format.json { head :no_content }
+    end
+  end
+  def remove_photo_image
+    @post = Post.friendly.find(params[:id])
+    @photos = @post.photos
 
+    @photos.purge_later # or use purge_later
+    redirect_to @post, notice: 'Photos were deleted.'
+  end
 
 
   private

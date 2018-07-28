@@ -1,0 +1,23 @@
+<div class="container">
+  <h1 class="text-center">My Photo Album</h1>
+
+  <div class="d-flex justify-content-center">
+    <p>
+      <%= link_to posts_path, class: "btn btn-outline-info" do %>
+        <%= fa_icon("arrow-left", text: "Back to posts") %>
+      <% end %>
+    </p>
+  </div>
+    <% @all_photos.each do |post| %>
+      <% if post.photos.attached? %>
+        <h4 class="text-center text-info"><%= post.title %></h4>
+        <div class="album">
+          <% post.photos.each do |photo| %>
+            <div class="d-flex justify-content-md-center">
+              <%= image_tag photo.variant(resize: "570x370"), class: "img-fluid img-thumbnail" %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+</div>
