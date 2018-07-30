@@ -21,7 +21,7 @@
       <div class="col-lg-4 col-md-6">
         <% if params[:action] == "index" && controller.controller_name == "posts"%>
             <h2 class="mb-0">Latest Posts</h2>
-          <% @records.limit(3).each do |post| %>
+          <% @published_records.limit(3).each do |post| %>
             <article>
               <h3 class="h6">
                 <%= link_to post.title.truncate(70), post, class: "" %>

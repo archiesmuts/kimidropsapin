@@ -1,6 +1,13 @@
 <div class="row justify-content-center">
   <div class="col-md-7">
-    <h1>Editing Post</h1>
+    <h1>
+      Editing Post &nbsp;
+      <% if user_signed_in? %>
+        <small>
+          <span class="badge badge-<%= @post.draft? ? "warning" : "success" %>"><%= @post.draft? ? "Draft" : "Final" %></span>
+        </small>
+      <% end %>
+    </h1>
     <%= render 'form', post: @post %>
   </div>
 </div>

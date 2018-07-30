@@ -8,8 +8,8 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     # @posts = Post.order("created_at DESC")
-    @pagy, @records = pagy(Post.order("created_at DESC"), items: 6)
-
+    @pagy, @all_records = pagy(Post.order("created_at DESC"), items: 6)
+    @page, @published_records = pagy(Post.final.order("created_at DESC"), items: 6)
   end
 
   # GET /posts/1
@@ -99,6 +99,6 @@ class PostsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body, :slug, :tag_list, :header_image, photos:[])
+      params.require(:post).permit(:title, :body, :published, :slug, :tag_list, :header_image, photos:[])
     end
 end

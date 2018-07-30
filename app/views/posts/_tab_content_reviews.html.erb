@@ -15,13 +15,22 @@
   <div class="tab-pane fade show active" id="eating-out" role="tabpanel">
     <h2 class="text-center text-success">Reviews on Eating out</h2>
     <div class="row">
-      <%= render @records.tagged_with(["reviews", "eating out"], :any => true) %>
+      <% if user_signed_in? %>
+        <%= render @all_records.tagged_with(["reviews", "eating out"], :any => true) %>
+        <% else %>
+        <%= render @published_records.tagged_with(["reviews", "eating out"], :any => true) %>
+      <% end %>
+
     </div>
   </div>
   <div class="tab-pane fade" id="products" role="tabpanel">
     <h2 class="text-center text-success">Reviews on Products I Use</h2>
     <div class="row">
-      <%= render @records.tagged_with(["reviews", "products"], :any => true) %>
+      <% if user_signed_in? %>
+        <%= render @all_records.tagged_with(["reviews", "products"], :any => true) %>
+      <% else %>
+        <%= render @published_records.tagged_with(["reviews", "products"], :any => true) %>
+      <% end %>
     </div>
   </div>
 </div>

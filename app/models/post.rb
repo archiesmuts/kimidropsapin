@@ -7,7 +7,11 @@ class Post < ApplicationRecord
   has_one_attached :header_image
   has_many_attached :photos
 
-  validates :title, :body, :slug, presence: true
+  validates :title, :body, :published, :slug, presence: true
 
+  enum published: {
+    draft: 0,
+    final: 1
+  }
   # scope :latest, -> { where(field: true) }
 end

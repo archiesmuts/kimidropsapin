@@ -7,7 +7,12 @@
     <% end %>
     <div class="card-body overlay">
       <h4 class="card-title"><%= link_to post.title, post %></h4>
-      <h6 class="card-subtitle mb-1">Posted <%= time_ago_in_words(post.created_at) %>&nbsp;ago</h6>
+      <h6 class="card-subtitle mb-1">
+        Posted <%= time_ago_in_words(post.created_at) %>&nbsp;ago&nbsp;
+        <% if user_signed_in? %>
+          <span class="badge badge-<%= post.draft? ? "warning" : "success" %>"><%= post.draft? ? "Draft" : "Final" %></span>
+        <% end %>
+      </h6>
       <p class="card-text"><%= sanitize(post.body.truncate(200)) %></p>
       <p class="card-text text-info"><%= fa_icon("comments") %>&nbsp;
         <%= pluralize(post.comments.size, 'comment') %>

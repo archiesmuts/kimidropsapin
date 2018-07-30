@@ -8,9 +8,14 @@
       <div class="media align-items-center mb-2">
         <img class="d-flex img-fluid rounded-circle mr-3" data-src="holder.js/40x40?theme=lava" alt="Image">
         <div class="media-body">
-          <h4 class="h6">By Kimberley Smuts</h4>
+          <h4 class="h5">
+            By Kimberley Smuts&nbsp;
+            <% if user_signed_in? %>
+              <span class="badge badge-<%= @post.draft? ? "warning" : "success" %>"><%= @post.draft? ? "Draft" : "Final" %></span>
+            <% end %>
+          </h4>
           <span class="d-block">May 31, 2017</span>
-          <span class="d-block">
+          <span class="d-block my-2">
             <%= fa_icon("tags") %>&nbsp;
             <% if @post.tags.any? %>
               <%= render @post.tags %>

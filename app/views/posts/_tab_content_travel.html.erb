@@ -15,14 +15,22 @@
   <div class="tab-pane fade show active" id="gluten-free" role="tabpanel">
     <h2 class="text-center text-success">Eating Gluten Free while Travelling</h2>
     <div class="row">
-      <%= render @records.tagged_with(["travel", "gluten free"], :any => true) %>
+      <% if user_signed_in? %>
+          <%= render @all_records.tagged_with(["travel", "gluten free"], :any => true) %>
+        <% else %>
+          <%= render @published_records.tagged_with(["travel", "gluten free"], :any => true) %>
+      <% end %>
     </div>
   </div>
   <div class="tab-pane fade" id="photos" role="tabpanel">
 
     <h2 class="text-center text-success">Selfies and Real Photos</h2>
     <div class="row">
-      <%= render @records.tagged_with(["travel", "photos"], :any => true) %>
+      <% if user_signed_in? %>
+        <%= render @all_records.tagged_with(["travel", "photos"], :any => true) %>
+          <% else %>
+        <%= render @published_records.tagged_with(["travel", "photos"], :any => true) %>
+      <% end %>
     </div>
   </div>
 </div>

@@ -36,6 +36,17 @@
     <%= form.label :photos, "Add one or more photos to display below body of post." %>
     <%= form.file_field :photos, multiple: true, class: "form-control" %>
   </div>
+
+  <div class="form-group">
+    <%= form.label :published, "To publish the final version of this post click on 'Final'" %> <br>
+
+    <% Post.publisheds.keys.map do |published| %>
+      <label class="form-check-inline">
+        <%= form.radio_button :published, published, class: "form-check-input" %>
+        <span class="form-check-label"><%= published.humanize %></span>
+      </label>
+    <% end %>
+  </div>
   <div class="btn-group">
     <% unless post.new_record? %>
       <%= link_to  @post, class: "btn btn-lg btn-outline-primary" do %>
