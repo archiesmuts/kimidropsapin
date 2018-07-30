@@ -38,8 +38,7 @@
   </div>
 
   <div class="form-group">
-    <%= form.label :published, "To publish the final version of this post click on 'Final'" %> <br>
-
+    <p class="font-weight-bold">To publish the final version of this post click on 'Final'</p>
     <% Post.publisheds.keys.map do |published| %>
       <label class="form-check-inline">
         <%= form.radio_button :published, published, class: "form-check-input" %>
