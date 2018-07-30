@@ -51,6 +51,10 @@
       <%= link_to  @post, class: "btn btn-lg btn-outline-primary" do %>
         <%= fa_icon("times", text: "Cancel") %>
       <% end %>
+      <% else %>
+      <%= link_to  posts_path, class: "btn btn-lg btn-outline-primary" do %>
+        <%= fa_icon("times", text: "Cancel") %>
+      <% end %>
     <% end %>
     <%= form.submit class: "btn btn-lg btn-primary" %>
   </div>
