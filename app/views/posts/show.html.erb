@@ -76,7 +76,7 @@
       <!-- end of post -->
       <!-- start of photo slider -->
       <div class="row">
-        <div class="col-sm-7 offset-sm-3 my-2">
+        <div class="col-sm-7 offset-sm-2 my-2">
           <% if user_signed_in? && @post.photos.attached? %>
             <h4 class="text-center">Sharing <%= pluralize(@post.photos.size, 'photo' ) %></h4>
             <p class="text-center">
@@ -84,12 +84,21 @@
                 method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
             </p>
           <% end %>
-          <div class="mx-auto d-block my-2 post-slider">
-            <% @post.photos.each do |photo| %>
-              <div>
-                <%= image_tag photo.variant(resize: "500x400"), class: "img-fluid img-thumbnail" %>
-              </div>
-            <% end %>
+          <div id="postSlider">
+            <div class="d-none d-md-block post-slider">
+              <% @post.photos.each do |photo| %>
+                <div>
+                  <%= image_tag photo.variant(resize: "570x770"), class: "mx-auto img-fluid img-thumbnail" %>
+                </div>
+              <% end %>
+            </div>
+            <div class="d-block d-md-none post-slider">
+              <% @post.photos.each do |photo| %>
+                <div>
+                  <%= image_tag photo.variant(resize: "370x370"), class: "mx-auto img-fluid img-thumbnail" %>
+                </div>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>

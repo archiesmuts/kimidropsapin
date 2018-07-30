@@ -13,8 +13,8 @@
         <h4 class="text-center text-info"><%= post.title %></h4>
         <div class="album">
           <% post.photos.each do |photo| %>
-            <div class="d-flex justify-content-md-center">
-              <%= image_tag photo.variant(resize: "570x370"), class: "img-fluid img-thumbnail" %>
+            <div class="mx-auto">
+              <%= image_tag photo.variant(resize: "370x370"), class: "img-thumbnail" %>
             </div>
           <% end %>
         </div>

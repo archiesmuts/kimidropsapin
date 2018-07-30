@@ -7,6 +7,7 @@ jQuery(document).on "turbolinks:load", ->
     centerMode: true
     centerPadding: '60px'
     slidesToShow: 3
+    variableWidth: true
     dots: true
     speed: 500
     responsive: [
