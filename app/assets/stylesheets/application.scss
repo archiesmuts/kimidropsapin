@@ -10,6 +10,8 @@
 @import 'font_awesome5';
 @import 'slick';
 @import 'slick-theme';
+@import 'direct_uploads';
+@import 'fields_with_errors';
 
 .slick-prev::before, .slick-next::before {
   color: purple;

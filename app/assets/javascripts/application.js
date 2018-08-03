@@ -16,6 +16,7 @@
 //= require rails-ujs
 //= require popper
 //= require activestorage
+//= require direct_uploads
 //= require bootstrap-sprockets
 //= require font_awesome5
 //= require data-confirm-modal

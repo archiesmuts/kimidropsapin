@@ -1,7 +1,7 @@
 <div class="col-sm-6 col-lg-4">
   <div class="card mr-3 mb-3"> <!-- style="width: 18rem;" -->
     <% if post.header_image.attached? %>
-      <%= image_tag post.header_image.variant(resize: "375x189!"), class: "card-img-top" %>
+      <%= image_tag post.header_image.variant(resize: "375x189!", auto_orient: true), class: "card-img-top" %>
       <% else %>
       <img class="card-img-top" src="https://s3.eu-central-1.amazonaws.com/kimis-blog-production/cool-background-tropical-salad-sm.jpg" alt="Tropical Salad">
     <% end %>

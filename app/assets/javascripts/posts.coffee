@@ -10,6 +10,14 @@ jQuery(document).on "turbolinks:load", ->
     fade: true
     cssEase: 'linear'
     adaptiveHeight: true
+    draggable: true
+    responsive: [
+      {
+        breakpoint: 576
+        settings:
+          arrows: false
+      }
+    ]
 
   $('.slick-carousel').slick
     autoplay: true

@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   resources :posts do
     resources :comments #, only: [:index, :new, :create, :destroy]
+
     member do
+      delete :remove_all_photos
       delete :remove_photo_image
       delete :remove_header_image
     end

@@ -1,0 +1,21 @@
+// styling for field with errors
+
+/* Rails scaffold style compatibility */
+
+#error_explanation {
+  @extend .alert;
+  @extend .alert-danger;
+  @extend .is-invalid;
+
+  h2 {
+    @extend .h4;
+  }
+
+  ul {
+    @extend .list-group;
+    li {
+      @extend .list-group-item;
+      @extend .list-group-item-danger;
+    }
+  }
+}

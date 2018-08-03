@@ -5,6 +5,7 @@ source 'https://rails-assets.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
+# gem "rails", github: "rails/rails"
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -47,8 +48,9 @@ gem 'acts-as-taggable-on', :git => 'https://github.com/Fodoj/acts-as-taggable-on
 gem 'trix', git: 'https://github.com/DRBragg/trix'
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
-# gem 'aws-sdk-s3', '~> 1.13', require: false
-# gem 'image_processing', '~> 1.2'
+# Variants rely on ImageProcessing gem for the actual transformations of the file,
+gem 'image_processing', '~> 1.2'
+
 gem 'sendgrid-ruby', '~> 5.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

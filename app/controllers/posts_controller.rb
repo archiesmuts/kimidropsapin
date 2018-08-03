@@ -8,8 +8,8 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     # @posts = Post.order("created_at DESC")
-    @pagy, @all_records = pagy(Post.order("created_at DESC"), items: 6)
-    @page, @published_records = pagy(Post.final.order("created_at DESC"), items: 6)
+    @pagy, @all_records = pagy(Post.with_attached_photos.order("created_at DESC"), items: 6)
+    @page, @published_records = pagy(Post.final.with_attached_photos.order("created_at DESC"), items: 6)
   end
 
   # GET /posts/1
@@ -68,6 +68,7 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
   def remove_header_image
     @post = Post.friendly.find(params[:id])
     @header_image = @post.header_image
@@ -78,12 +79,21 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  def remove_all_photos
+    @post = Post.friendly.find(params[:id])
+    @photos = @post.photos
+    @photos.purge_later # or use purge_later
+    redirect_to @post, notice: 'Photos were deleted.'
+  end
+
   def remove_photo_image
     @post = Post.friendly.find(params[:id])
     @photos = @post.photos
-
-    @photos.purge_later # or use purge_later
-    redirect_to @post, notice: 'Photos were deleted.'
+    @photos.each do |photo|
+      @photo = ActiveStorage::Attachment.find(photo.id)
+    end
+    @photo.purge_later
+    redirect_to @post, notice: 'One photo was deleted.'
   end
 
 
