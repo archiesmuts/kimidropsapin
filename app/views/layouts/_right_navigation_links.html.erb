@@ -1,5 +1,8 @@
 <!-- right navigation links -->
 <% if user_signed_in? %>
+  <li class="nav-item">
+    <%= link_to "Photo Editing Tips", page_path('photo_editing_tips'), class: "nav-link" %>
+  </li>
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProfileLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <%= fa_icon "user" %>&nbsp;<%= current_user.name %>

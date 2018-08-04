@@ -1,0 +1,97 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h1 class="text-center text-info">How to edit your photos</h1>
+      <div class="d-flex justify-content-center my-2">
+        <%= link_to  posts_path, class: "btn btn-outline-info" do %>
+        <%= fa_icon("arrow-left", text: "Back to posts") %>
+        <% end %>
+      </div>
+      <h2>The Header Image</h2>
+      <p>
+        The Header Image is displayed at the top of a post in the index view.
+        Only one header image can be uploaded at a time.
+      </p>
+
+      <p>
+        Ideally the header image must be resized with the following dimensions:
+        <ul>
+          <li>For best results the image should be in landscape format.</li>
+          <li>In most cases you only have to change the width.</li>
+          <li>Width: 375 pixels (px)</li>
+          <li>Height: 189 pixels (px) - approx.</li>
+        </ul>
+      </p>
+      <h2>The Photos in the body of the post</h2>
+      <p>
+          In addition to the header image you can also upload a number of other
+          photos in the body of the blog post.
+          <ul>
+            <li>
+              The photos that you upload in the body of the post can be in
+              either landscape or portrait layout format or square if you want.
+            </li>
+            <li>
+              You can decide to have or mix of landscape and portrait for a post or
+              choost to have one consistent format for a specific blog post.  It
+              makes it easier on the eye of all the photos in a blog have the same format.
+            </li>
+          </ul>
+      </p>
+      <p>
+        Ideally the body photos must be resized with the following dimensions:
+        <ul>
+          <li>In most cases you only have to change the width.</li>
+          <li>Width: 550 pixels (px)</li>
+          <li>Height: 700 pixels (px) - approx.</li>
+          <li>
+            <strong>Note:</strong> Sometimes portrait photos will be appear "horizontal" in the editor.
+            If this happens you have to use the "Rotate" option to change it back to portrait.
+          </li>
+        </ul>
+      </p>
+      <h2>The Editing Tool</h2>
+      <p>
+        <ul>
+          <li>
+            There are many online tools available for editing photos. Check out <a href="https://www.befunky.com/create/">BeFunky</a>
+            and <a href="https://pixlr.com/editor/">Pixlr</a>
+          </li>
+          <li>
+            Both are easy to use. BeFunky is probably better becase Pixlr needs your browser
+            to run Adobe Flash.
+          </li>
+          <li>
+            Before you edit your photos create an image folder on your PC for each Blog Post.
+            <ul>
+              <li>Make copies of your orginal photos and place it in the Post folder.</li>
+              <li>
+                Only edit copies of your original photos. Remember the edited photos will
+                be much smaller in size than the originals.
+              </li>
+              <li>
+                This smaller sizes are important as it saves space and costs,
+                and it makes your website much faster to browse.
+              </li>
+            </ul>
+          </li>
+          <li>
+            Online Photo Editing basics
+            <ol>
+              <li>On the website open the image into the editor.</li>
+              <li>Choose "Resize" (Crop is another option but only use it if you have to.)</li>
+              <li>Type in Width. If the "Lock Aspect Ratio" is checked you don't have to type in the Height</li>
+              <li>Click "OK"</li>
+              <li>If you're happy click on "SAVE" (to your PC)</li>
+              <li>Change the filename to something meaningful. Avoid dashes and underscores</li>
+              <li>Choose "JPG" as the format.</li>
+              <li>Leave "Quality" as is.</li>
+              <li>"Save"</li>
+              <li>Voila</li>
+            </ol>
+          </li>
+        </ul>
+      </p>
+    </div>
+  </div>
+</div>
