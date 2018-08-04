@@ -18,6 +18,7 @@ class Post < ApplicationRecord
   private
 
   def header_image_format
+    return unless header_image.attached?
     if !header_image.content_type.in?('image/jpeg image/png image/svg')
       errors.add(:header_image, 'needs to be a JPG, PNG or SVG image')
       header_image.purge_later
@@ -29,7 +30,7 @@ class Post < ApplicationRecord
     photos.each do |photo|
       return if photo.blob.content_type.start_with? 'image/'
       photo.purge_later
-      errors.add(:photo, 'needs to be an image')
+      errors.add(:photo, 'needs to be JPG, PNG or SVG image')
     end
   end
 
