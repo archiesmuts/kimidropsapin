@@ -21,7 +21,7 @@ Devise.setup do |config|
   # config.mailer_sender = 'kimberley.smuts@gmail.com'
   # Rails.application.credentials.domain_name
     domain = Rails.application.credentials.domain_name
-    domain ||= 'mysterious-taiga-57851.herokuapp.com'
+    domain ||= 'kimidropsapin.herokuapp.com'
     config.mailer_sender = 'no-reply@' + domain
   # Configure the class responsible to send e-mails.
   config.mailer = 'Devise::Mailer'
