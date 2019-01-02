@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   def index
     # @posts = Post.order("created_at DESC")
     @pagy, @all_records = pagy(Post.with_attached_photos.order("created_at DESC"), items: 6)
-    @page, @published_records = pagy(Post.final.with_attached_photos.order("created_at DESC"), items: 6)
+    @pagy, @published_records = pagy(Post.final.with_attached_photos.order("created_at DESC"), items: 6)
   end
 
   # GET /posts/1
