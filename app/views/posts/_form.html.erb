@@ -15,7 +15,14 @@
     <%= form.label :title, "Give your post an informative snazzy title." %>
     <%= form.text_field :title, class: "form-control" %>
   </div>
-
+  <% if post.header_image.attached? %>
+  <%= image_tag post.header_image.variant(resize: "75x75"), class: "img-thumbnail" %>
+    <div class="media">
+      <div class="media-body">
+        Current image
+      </div>
+    </div>
+  <% end %>
   <div class="form-group">
     <%= form.label :header_image, "Add a header image for this post" %>
     <%= form.file_field :header_image, direct_upload: true, class: "form-control" %>

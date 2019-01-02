@@ -6,7 +6,12 @@
       <h1 class="h1 text-info"><%= @post.title %></h1>
       <!-- Author -->
       <div class="media align-items-center mb-2">
-        <img class="d-flex img-fluid rounded-circle mr-3" data-src="holder.js/40x40?theme=lava" alt="Image">
+        <%= image_tag "kimi_75x75.jpg",
+          size: "75x75",
+          alt: "kimi-headshot",
+          id: "kimi-headshot",
+          class: "image-fluid mr-3 mb-2" %>
+
         <div class="media-body">
           <h4 class="h5">
             By Kimberley Smuts&nbsp;
@@ -14,7 +19,12 @@
               <span class="badge badge-<%= @post.draft? ? "warning" : "success" %>"><%= @post.draft? ? "Draft" : "Final" %></span>
             <% end %>
           </h4>
-          <span class="d-block">May 31, 2017</span>
+          <span class="d-block">
+            Posted: <%= @post.created_at.strftime("%d %b %Y") %>
+              <% if @post.updated_at > @post.created_at + 1.day %>
+              | Updated: <%= @post.updated_at.strftime("%d %b %Y") %>
+              <% end %>
+          </span>
           <span class="d-block my-2">
             <%= fa_icon("tags") %>&nbsp;
             <% if @post.tags.any? %>
@@ -76,7 +86,9 @@
           <!-- retutns the first character after stripping all the tags -->
         </span>
         <p>
-          <%= sanitize @post.body[6..-1], attributes: %w(href) %>
+          <div class="trix-content">
+            <%= sanitize @post.body[6..-1], attributes: %w(href) %>
+          </div>
         </p>
         <!--Will return the array from 6 to the last character. -->
       </div>
