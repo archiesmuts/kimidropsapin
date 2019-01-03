@@ -15,6 +15,10 @@ class Post < ApplicationRecord
     final: 1
   }
 
+  def should_generate_new_friendly_id?
+    title_changed?
+  end
+
   private
 
   def header_image_format
