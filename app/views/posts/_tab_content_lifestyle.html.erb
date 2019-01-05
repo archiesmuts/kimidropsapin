@@ -16,7 +16,7 @@
     <h2 class="text-center text-success">Beauty</h2>
     <div class="row">
       <% if user_signed_in? %>
-        <%= render @all_records.tagged_with(["lifestyle", "beauty"], :any => true) %>
+        <%= render @posts.tagged_with(["lifestyle", "beauty"], :any => true) %>
         <% else %>
         <%= render @published_records.tagged_with(["lifestyle", "beauty"], :any => true) %>
       <% end %>
@@ -26,7 +26,7 @@
     <h2 class="text-center text-success">Fashion</h2>
     <div class="row">
       <% if user_signed_in? %>
-        <%= render @all_records.tagged_with(["lifestyle", "fashion"], :any => true) %>
+        <%= render @posts.tagged_with(["lifestyle", "fashion"], :any => true) %>
       <% else %>
         <%= render @published_records.tagged_with(["lifestyle", "fashion"], :any => true) %>
       <% end %>

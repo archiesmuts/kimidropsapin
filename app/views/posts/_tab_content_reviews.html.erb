@@ -16,7 +16,7 @@
     <h2 class="text-center text-success">Reviews on Eating out</h2>
     <div class="row">
       <% if user_signed_in? %>
-        <%= render @all_records.tagged_with(["reviews", "eating out"], :any => true) %>
+        <%= render @posts.tagged_with(["reviews", "eating out"], :any => true) %>
         <% else %>
         <%= render @published_records.tagged_with(["reviews", "eating out"], :any => true) %>
       <% end %>
@@ -27,7 +27,7 @@
     <h2 class="text-center text-success">Reviews on Products I Use</h2>
     <div class="row">
       <% if user_signed_in? %>
-        <%= render @all_records.tagged_with(["reviews", "products"], :any => true) %>
+        <%= render @posts.tagged_with(["reviews", "products"], :any => true) %>
       <% else %>
         <%= render @published_records.tagged_with(["reviews", "products"], :any => true) %>
       <% end %>
