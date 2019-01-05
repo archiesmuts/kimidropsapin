@@ -3,10 +3,12 @@ Trix.config.attachments.file.caption = {
   name: false,
   size: false
 };
+
 Trix.config.attachments.preview.caption = {
   name: false,
   size: false
 };
+
 (function() {
   var HOST = "https://d13txem1unpe48.cloudfront.net/"
 
