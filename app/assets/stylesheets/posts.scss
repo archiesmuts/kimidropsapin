@@ -11,7 +11,7 @@
 //   min-height: 100vh;
 // }
 .overlay {
-  margin-top: -2rem;
+  margin-top: -1.5rem;
   margin-left: 1rem;
   margin-right: 1rem;
   background-color: white;
@@ -21,12 +21,31 @@
 .firstcharacter {
   color: purple;
   float: left;
-  font-family: Georgia;
-  font-size: 75px;
-  line-height: 60px;
-  padding-top: 4px;
+  font-family: $font-family-sans-serif;
+  font-size: 50px;
+  line-height: 45px;
+  padding-top: 2px;
   padding-right: 8px;
   padding-left: 3px;
+}
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.content {
+  padding: 16px;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 102px;
+}
+.header {
+  background: white;
+  border-bottom: 2px solid $info;
 }
 
 .globe {
@@ -38,6 +57,9 @@
     -ms-transform: rotate(20deg); /* IE 9 */
     -webkit-transform: rotate(20deg); /* Safari 3-8 */
     transform: rotate(20deg);
+}
+.pin-color {
+  color: $info;
 }
 .css1 { font-size: 1.0em; }
 .css2 { font-size: 1.2em; }
