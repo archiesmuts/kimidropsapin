@@ -24,7 +24,7 @@ class Post < ApplicationRecord
   def header_image_format
     return unless header_image.attached?
     if !header_image.content_type.in?('image/jpeg image/png image/svg')
-      errors.add(:header_image, 'needs to be a JPG, PNG or SVG image')
+      errors.add(:header_image, 'needs to be a JPG, JPEG, PNG or SVG image')
       header_image.purge_later
     end
   end
