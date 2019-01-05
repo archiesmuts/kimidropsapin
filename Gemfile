@@ -45,7 +45,7 @@ gem 'bootswatch', '~> 4.1', '>= 4.1.3'
 # gem 'acts-as-taggable-on', '~> 5.0'
 gem 'acts-as-taggable-on', :git => 'https://github.com/Fodoj/acts-as-taggable-on', :branch => 'rails-5.2'
 # the maclover/trix gem does not work with rails 5.2
-gem 'trix', git: 'https://github.com/DRBragg/trix'
+# gem 'trix', git: 'https://github.com/DRBragg/trix'
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
 # Variants rely on ImageProcessing gem for the actual transformations of the file,
