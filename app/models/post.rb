@@ -34,7 +34,7 @@ class Post < ApplicationRecord
     photos.each do |photo|
       return if photo.blob.content_type.start_with? 'image/'
       photo.purge_later
-      errors.add(:photo, 'needs to be JPG, PNG or SVG image')
+      errors.add(:photo, 'needs to be JPG, JPEG, PNG or SVG image')
     end
   end
 
