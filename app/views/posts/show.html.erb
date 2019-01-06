@@ -4,7 +4,7 @@
     <!-- <div class="col-md-3 pr-2 bg-stripes" id="left-col"></div> -->
     <div class="col-lg-8 offset-lg-1">
       <div class="header" id="stickyTitle">
-        <h1 class="text-info"><%= @post.title %></h1>
+        <h1 class="h2 text-info"><%= @post.title %></h1>
       </div>
       <div class="content">
         <!-- Author -->
@@ -98,62 +98,34 @@
         </div>
         <!-- end of post -->
         <!-- start of photo slider -->
+        <% if user_signed_in? && @post.photos.attached? %>
+          <h4 class="text-center">Sharing <%= pluralize(@post.photos.size, 'photo' ) %></h4>
+          <p class="text-center">
+            <%= link_to 'Remove All Photos', remove_all_photos_post_path(@post),
+              method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
+          </p>
+        <% end %>
         <div class="row">
-          <div class="col-sm-7 offset-sm-2 my-2">
-            <% if user_signed_in? && @post.photos.attached? %>
-              <h4 class="text-center">Sharing <%= pluralize(@post.photos.size, 'photo' ) %></h4>
-              <p class="text-center">
-                <%= link_to 'Remove All Photos', remove_all_photos_post_path(@post),
-                  method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
-              </p>
-            <% end %>
-            <div id="">
-              <div class="d-none d-md-block">
-                <% @post.photos.each do |photo| %>
-                  <div>
-                    <% if photo.variable? %>
-                      <%= link_to image_tag(photo.variant(resize: "550x550", auto_orient: true), class: "mx-auto img-fluid img-thumbnail"), photo %>
-                      <% elsif photo.previewable? %>
-                      <%= image_tag photo.preview(resize: "350x350"), class: "mx-auto img-fluid img-thumbnail" %>
-                      <% elsif photo.image? %>
-                        <%= image_tag(photo, width: 570, class: "mx-auto img-fluid img-thumbnail") %>
-                    <% end %>
-                    <div class="text-center align-self-center">
-                      <%= File.basename(photo.filename.to_s, ".*").titleize %>&nbsp;
-                      <% if user_signed_in? %>
-                        <%= link_to remove_photo_image_post_path(@post, @photo),
-                          method: :delete, data: { confirm: 'Do you really you want to delete this photo?', title: "Remove this photo" }, class: "btn btn-link" do %>
-                          <%= fa_icon("trash-alt", type: "regular", style: 'color: Tomato') %>
-                        <% end %>
-                      <% end %>
-                    </div>
-                  </div>
-                <% end %>
-              </div>
-              <div class="d-block d-md-none">
-                <% @post.photos.each do |photo| %>
-                  <div class="d-flex flex-column align-self-center">
-                    <% if photo.variable? %>
-                      <%= link_to image_tag(photo.variant(resize: "350x350", auto_orient: true), class: "mx-auto img-fluid img-thumbnail"), photo %>
-                      <% elsif photo.image? %>
-                        <%= image_tag(photo, width: 350, class: "mx-auto img-fluid img-thumbnail") %>
-                      <% elsif photo.previewable? %>
-                      <%= image_tag photo.preview(resize: "350x350"), class: "mx-auto img-fluid img-thumbnail" %>
-                    <% end %>
-                    <div class="text-center align-self-center">
-                      <%= File.basename(photo.filename.to_s, ".*").titleize %>&nbsp;
-                      <% if user_signed_in? %>
-                        <%= link_to remove_photo_image_post_path(@post, @photo),
-                          method: :delete, data: { confirm: 'Do you really you want to delete this photo?', title: "Remove this photo" }, class: "btn btn-link" do %>
-                          <%= fa_icon("trash-alt", type: "regular", style: 'color: Tomato') %>
-                        <% end %>
-                      <% end %>
-                    </div>
-                  </div>
+          <% @post.photos.each do |photo| %>
+            <div class="col-md-6">
+              <% if photo.variable? %>
+                <%= link_to image_tag(photo.variant(resize: "550x550", auto_orient: true), class: "mx-auto img-fluid img-thumbnail"), photo %>
+                <% elsif photo.previewable? %>
+                <%= image_tag photo.preview(resize: "350x350"), class: "mx-auto img-fluid img-thumbnail" %>
+                <% elsif photo.image? %>
+                  <%= image_tag(photo, width: 570, class: "mx-auto img-fluid img-thumbnail") %>
+              <% end %>
+              <div class="text-center align-self-center">
+                <%= File.basename(photo.filename.to_s, ".*").titleize %>&nbsp;
+                <% if user_signed_in? %>
+                  <%= link_to remove_photo_image_post_path(@post, @photo),
+                    method: :delete, data: { confirm: 'Do you really you want to delete this photo?', title: "Remove this photo" }, class: "btn btn-link" do %>
+                    <%= fa_icon("trash-alt", type: "regular", style: 'color: Tomato') %>
+                  <% end %>
                 <% end %>
               </div>
             </div>
-          </div>
+          <% end %>
         </div>
         <!-- end of photo slider -->
         <div class="btn-group mb-2">
