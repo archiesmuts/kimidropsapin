@@ -16,32 +16,48 @@
     <%= form.text_field :title, class: "form-control" %>
   </div>
   <% if post.header_image.attached? %>
-  <%= image_tag post.header_image.variant(resize: "75x75"), class: "img-thumbnail" %>
-    <div class="media">
-      <div class="media-body">
-        Current image
-      </div>
-    </div>
+    Current Header Image &nbsp;
+    <%= image_tag post.header_image.variant(resize: "80x80"), class: "img-thumbnail m-2" %>
   <% end %>
   <div class="form-group">
     <%= form.label :header_image, "Add a header image for this post" %>
     <%= form.file_field :header_image, direct_upload: true, class: "form-control" %>
-    <small id="headerImageHelpBlock" class="form-text text-info">
+    <span id="headerImageHelpBlock" class="form-text text-info">
       The header image will appear in the header section of this post in the "All Posts" view.
-    </small>
+    </span>
   </div>
+  <p>
+    <button class="btn btn-sm btn-outline-info" type="button" data-toggle="collapse"
+      data-target="#collapseTagHelp" aria-expanded="false" aria-controls="collapseTagHelp">
+       <%= fa_icon("question-circle", text: "Help with tags") %>
+    </button>
+  </p>
+  <div class="collapse" id="collapseTagHelp">
+    <div class="card bg-info text-white card-body">
+      <h6 class="card-title">Tag Categories with tag names</h6>
+       <p class="card-text">Lifestyle and Beauty - lifestyle, beauty </p>
+       <p class="card-text">Fashion - lifestyle, fashion</p>
+       <p class="card-text">Reviews on Eating out - reviews, eating out</p>
+       <p class="card-text">Reviews on Products I Use - reviews, products</p>
+       <p class="card-text">Eating Gluten Free while Travelling - travel, gluten free</p>
+       <p class="card-text">Selfies and Other Photos - travel, photos</p>
+    </div>
+  </div>
+
   <div class="form-group">
-    <%= form.label :tag_list, "Tag post by adding 'tags' separated by a comma, e.g. one, two, three, twenty four, five" %>
+    <%= form.label :tag_list, "Tags"  %>
     <%= form.text_field :tag_list, value: form.object.tag_list.to_s, class: "form-control" %>
+    <span id="tagHelpBlock" class="form-text text-info">
+      Tag post by adding 'tags' separated by a comma, e.g. one, two, three, twenty four, five
+    </span>
   </div>
+
   <div class="form-group">
     <%= form.label :body %>
     <%= form.hidden_field :body %>
-    <div class="card-body">
       <trix-editor input="post_body" class="trix-content"></trix-editor>
-    </div>
   </div>
-  
+
   <div class="form-group">
     <%= form.label :photos, "Add one or more photos to display below body of post." %>
     <%= form.file_field :photos, multiple: true, direct_upload: true, class: "form-control" %>
@@ -56,6 +72,7 @@
       </label>
     <% end %>
   </div>
+
   <div class="btn-group">
     <% unless post.new_record? %>
       <%= link_to  @post, class: "btn btn-lg btn-outline-primary" do %>
