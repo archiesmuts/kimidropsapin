@@ -8,16 +8,17 @@
       <% end %>
     </p>
   </div>
-    <% @all_photos.each do |post| %>
-      <% if post.photos.attached? %>
-        <h4 class="text-center text-info"><%= post.title %></h4>
-        <div class="album">
-          <% post.photos.each do |photo| %>
-            <div class="mx-auto">
-              <%= image_tag photo.variant(resize: "370x370"), class: "img-thumbnail" %>
-            </div>
-          <% end %>
-        </div>
+
+  <% @published_posts.each do |post| %>
+    <% if post.photos.attached? %>
+    <h4 class="text-center text-info"><%= link_to post.title, post %></h4>
+    <div class="row">
+      <% post.photos.each do |photo| %>
+      <div class="col-md-4">
+        <%= image_tag photo, class: "img-thumbnail" %>
+      </div>
       <% end %>
+    </div>
     <% end %>
+  <% end %>
 </div>
