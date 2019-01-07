@@ -104,7 +104,6 @@
             <%= link_to 'Remove All Photos', remove_all_photos_post_path(@post),
               method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
           </p>
-        <% end %>
         <div class="row">
           <% @post.photos.each do |photo| %>
             <div class="col-md-6">
@@ -127,6 +126,8 @@
             </div>
           <% end %>
         </div>
+        <% end %>
+        
         <!-- end of photo slider -->
         <div class="btn-group mb-2">
           <%= link_to posts_path, class: "btn btn-outline-primary" do %>
