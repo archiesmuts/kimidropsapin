@@ -77,7 +77,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   # Better Errors replaces the standard Rails error page with a much better and more useful error page.
-  gem 'better_errors', '~> 2.4'
+  gem 'better_errors', '~> 2.8'
 
   # binding_of_caller is optional, but is necessary to use Better Errors' advanced features (REPL, local/instance variable inspection, pretty stack frame names).
   gem "binding_of_caller"
